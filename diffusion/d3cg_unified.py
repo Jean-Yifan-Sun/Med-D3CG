@@ -197,32 +197,217 @@ class D3CGUnifiedSampler_cond(nn.Module):
             return torch.clamp(result, -1.0, 1.0)
 
 
+class D3CGUnifiedTrainer_uncond(nn.Module):
+    """无条件D3CG训练器，直接在小波域进行图像生成"""
+    
+    def __init__(self, model, beta_1, beta_T, T, 
+                 wave_type="haar", 
+                 transform_levels=1,
+                 backend="pytorch",
+                 **kwargs):
+        super().__init__()
+        self.model = model
+        self.T = T
+        self.wave_type = wave_type
+        self.transform_levels = transform_levels
+        self.backend = backend
+        
+        # 小波变换对象（延迟初始化）
+        self._wavelet_transform = None
+        
+        # 扩散调度参数
+        betas = torch.linspace(beta_1, beta_T, T).double()
+        alphas = 1.0 - betas
+        alphas_bar = torch.cumprod(alphas, dim=0)
+        self.register_buffer("betas", betas)
+        self.register_buffer("sqrt_alphas_bar", torch.sqrt(alphas_bar))
+        self.register_buffer("sqrt_one_minus_alphas_bar", torch.sqrt(1.0 - alphas_bar))
+    
+    def get_wavelet_transform(self, device):
+        """获取小波变换对象（延迟初始化）"""
+        if self._wavelet_transform is None:
+            self._wavelet_transform = get_wavelet_transform(
+                wave_type=self.wave_type,
+                transform_levels=self.transform_levels,
+                device=device,
+                backend=self.backend
+            )
+        return self._wavelet_transform
+    
+    def forward(self, x0):
+        """
+        无条件训练前向传播
+        x0: 输入图像 [B, C, H, W]
+        """
+        B = x0.size(0)
+        device = x0.device
+        t = torch.randint(self.T, (B,), device=device)
+        
+        # 获取小波变换对象
+        wt = self.get_wavelet_transform(device)
+        
+        # 小波域变换
+        x_coeffs = wt.forward_transform(x0)
+        
+        # 扩散过程
+        noise = torch.randn_like(x_coeffs)
+        x_t = extract(self.sqrt_alphas_bar, t, x_coeffs.shape) * x_coeffs + \
+              extract(self.sqrt_one_minus_alphas_bar, t, x_coeffs.shape) * noise
+        
+        # 模型预测
+        eps_theta = self.model(x_t, t)
+        
+        return F.mse_loss(eps_theta, noise, reduction="sum")
+
+
+class D3CGUnifiedSampler_uncond(nn.Module):
+    """无条件D3CG采样器"""
+    
+    def __init__(self, model, beta_1, beta_T, T,
+                 wave_type="haar",
+                 transform_levels=1,
+                 backend="pytorch",
+                 **kwargs):
+        super().__init__()
+        self.model = model
+        self.T = T
+        self.wave_type = wave_type
+        self.transform_levels = transform_levels
+        self.backend = backend
+        
+        # 小波变换对象（延迟初始化）
+        self._wavelet_transform = None
+        self.image_size = None  # 动态设置
+        
+        # 扩散调度参数
+        betas = torch.linspace(beta_1, beta_T, T).double()
+        alphas = 1.0 - betas
+        self.register_buffer("betas", betas)
+        self.register_buffer("alphas", alphas)
+        self.register_buffer("alphas_cumprod", torch.cumprod(alphas, dim=0))
+        
+        # 后验方差
+        alphas_cumprod_prev = F.pad(self.alphas_cumprod[:-1], (1, 0), value=1.0)
+        posterior_variance = betas * (1.0 - alphas_cumprod_prev) / (1.0 - self.alphas_cumprod)
+        self.register_buffer("posterior_variance", posterior_variance)
+    
+    def get_wavelet_transform(self, device):
+        """获取小波变换对象（延迟初始化）"""
+        if self._wavelet_transform is None:
+            self._wavelet_transform = get_wavelet_transform(
+                wave_type=self.wave_type,
+                transform_levels=self.transform_levels,
+                device=device,
+                backend=self.backend
+            )
+        return self._wavelet_transform
+    
+    def p_mean_variance(self, x_t, t):
+        """计算去噪步骤的均值和方差（无条件）"""
+        eps = self.model(x_t, t)
+        
+        sqrt_alphas_cumprod_t = extract(torch.sqrt(self.alphas_cumprod), t, x_t.shape)
+        sqrt_one_minus = extract(torch.sqrt(1 - self.alphas_cumprod), t, x_t.shape)
+        
+        # 预测的x0
+        x0_pred = (x_t - sqrt_one_minus * eps) / sqrt_alphas_cumprod_t
+        
+        # 计算均值
+        model_mean = (1.0 / torch.sqrt(extract(self.alphas, t, x_t.shape))) * (
+            x_t - extract(self.betas, t, x_t.shape) * eps / sqrt_one_minus)
+        
+        # 方差
+        model_var = extract(self.posterior_variance, t, x_t.shape)
+        
+        return model_mean, model_var, x0_pred
+    
+    def forward(self, batch_size, channels, image_size, device):
+        """
+        生成无条件样本
+        Args:
+            batch_size: 批次大小
+            channels: 小波系数通道数
+            image_size: 生成图像大小
+            device: 设备
+        """
+        with torch.no_grad():
+            wt = self.get_wavelet_transform(device)
+            
+            # 初始化噪声
+            x_t = torch.randn(batch_size, channels, image_size // 2, image_size // 2, device=device)
+            
+            # 逆扩散过程
+            for time in reversed(range(self.T)):
+                t = torch.full((batch_size,), time, dtype=torch.long, device=device)
+                mean, var, _ = self.p_mean_variance(x_t, t)
+                
+                if time > 0:
+                    x_t = mean + torch.sqrt(var) * torch.randn_like(x_t)
+                else:
+                    x_t = mean
+            
+            # 小波逆变换
+            x_reconstructed = wt.inverse_transform(x_t, (image_size, image_size))
+            
+            # 确保重建图像尺寸正确
+            if x_reconstructed.shape[2:] != (image_size, image_size):
+                x_reconstructed = F.interpolate(x_reconstructed, size=(image_size, image_size), 
+                                              mode='bilinear', align_corners=False)
+            
+            return torch.clamp(x_reconstructed, -1.0, 1.0)
+
+
 # 便利函数：创建特定配置的训练器和采样器
-def create_d3cg_trainer(model, beta_1, beta_T, T, config):
+def create_d3cg_trainer(model, beta_1, beta_T, T, config, is_uncond=False):
     """根据配置创建D3CG训练器"""
-    return D3CGUnifiedTrainer_cond(
-        model=model,
-        beta_1=beta_1,
-        beta_T=beta_T,
-        T=T,
-        wave_type=config.get("wave_type", "haar"),
-        nonlinear_type=config.get("nonlinear_type", "linear"),
-        transform_levels=config.get("transform_levels", 1),
-        backend=config.get("backend", "pytorch"),
-        **config.get("nonlinear_params", {})
-    )
+    if is_uncond:
+        return D3CGUnifiedTrainer_uncond(
+            model=model,
+            beta_1=beta_1,
+            beta_T=beta_T,
+            T=T,
+            wave_type=config.get("wave_type", "haar"),
+            transform_levels=config.get("transform_levels", 1),
+            backend=config.get("backend", "pytorch")
+        )
+    else:
+        return D3CGUnifiedTrainer_cond(
+            model=model,
+            beta_1=beta_1,
+            beta_T=beta_T,
+            T=T,
+            wave_type=config.get("wave_type", "haar"),
+            nonlinear_type=config.get("nonlinear_type", "linear"),
+            transform_levels=config.get("transform_levels", 1),
+            backend=config.get("backend", "pytorch"),
+            **config.get("nonlinear_params", {})
+        )
 
 
-def create_d3cg_sampler(model, beta_1, beta_T, T, config):
+def create_d3cg_sampler(model, beta_1, beta_T, T, config, is_uncond=False, sampling_timesteps=None):
     """根据配置创建D3CG采样器"""
-    return D3CGUnifiedSampler_cond(
-        model=model,
-        beta_1=beta_1,
-        beta_T=beta_T,
-        T=T,
-        wave_type=config.get("wave_type", "haar"),
-        nonlinear_type=config.get("nonlinear_type", "linear"),
-        transform_levels=config.get("transform_levels", 1),
-        backend=config.get("backend", "pytorch"),
-        **config.get("nonlinear_params", {})
-    )
+    if sampling_timesteps is not None:
+        T = int(sampling_timesteps) # 确保T足够大以覆盖所有采样步骤
+        print(f"Using custom sampling timesteps: {T}")
+    if is_uncond:
+        return D3CGUnifiedSampler_uncond(
+            model=model,
+            beta_1=beta_1,
+            beta_T=beta_T,
+            T=T,
+            wave_type=config.get("wave_type", "haar"),
+            transform_levels=config.get("transform_levels", 1),
+            backend=config.get("backend", "pytorch")
+        )
+    else:
+        return D3CGUnifiedSampler_cond(
+            model=model,
+            beta_1=beta_1,
+            beta_T=beta_T,
+            T=T,
+            wave_type=config.get("wave_type", "haar"),
+            nonlinear_type=config.get("nonlinear_type", "linear"),
+            transform_levels=config.get("transform_levels", 1),
+            backend=config.get("backend", "pytorch"),
+            **config.get("nonlinear_params", {})
+        )

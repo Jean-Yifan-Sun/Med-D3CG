@@ -1,0 +1,4 @@
+/data/*
+/jobs/res/*
+*.pyc
+/results

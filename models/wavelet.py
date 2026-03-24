@@ -8,9 +8,20 @@ class WTUNet(nn.Module):
         super().__init__()
         tdim = ch*4
         self.time_embedding = TimeEmbedding(T, ch, tdim)
+        
+        # Default channels
+        if in_channels is None:
+            in_channels = 2  # Default for conditional (CT + CBCT)
+        if out_channels is None:
+            out_channels = 1
+            
         self.out_channels = out_channels
 
-        wavelet_in_channels = 24 if out_channels == 3 else 8
+        # Wavelet input channels: in_channels * 4 for single-level DWT
+        # (1 LL component + 3 HF components per input channel)
+        wavelet_in_channels = in_channels * 4
+        if out_channels == 3:  # RGB output uses different scaling
+            wavelet_in_channels = 24
 
         self.head = nn.Conv2d(wavelet_in_channels, ch, 3, 1, 1)
         self.initialize(self.head)
@@ -42,7 +53,7 @@ class WTUNet(nn.Module):
             if i != 0:
                 self.upblocks.append(UpSample(now_ch))
 
-        wavelet_out_channels = 12 if out_channels == 3 else 4
+        wavelet_out_channels = 12 if out_channels == 3 else (out_channels * 4)
 
         self.tail = nn.Sequential(
             nn.GroupNorm(32, now_ch),

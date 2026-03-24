@@ -76,6 +76,35 @@ D3CG_CONFIGS = {
     },
 }
 
+# 无条件D3CG模型配置
+D3CG_UNCOND_CONFIGS = {
+    "D3CG_uncond_haar": {
+        "wave_type": "haar",
+        "transform_levels": 1,
+        "backend": "pytorch"
+    },
+    "D3CG_uncond_db4": {
+        "wave_type": "db4",
+        "transform_levels": 1,
+        "backend": "pytorch"
+    },
+    "D3CG_uncond_coif3": {
+        "wave_type": "coif3",
+        "transform_levels": 1,
+        "backend": "pytorch"
+    },
+    "D3CG_uncond_twice_haar": {
+        "wave_type": "haar",
+        "transform_levels": 2,
+        "backend": "pytorch"
+    },
+    "D3CG_uncond_twice_db4": {
+        "wave_type": "db4",
+        "transform_levels": 2,
+        "backend": "pytorch"
+    },
+}
+
 
 def get_trainer_sampler(model_name, net_model, beta_1, beta_T, T, device, **kwargs):
     """
@@ -92,32 +121,40 @@ def get_trainer_sampler(model_name, net_model, beta_1, beta_T, T, device, **kwar
         (trainer, sampler): 训练器和采样器元组
     """
     
+    # Extract sampling_timesteps for accelerated sampling
+    sampling_timesteps = kwargs.get("sampling_timesteps", None)
+    
     # 基础DDPM模型
     if model_name == "DDPM":
         trainer = GaussianDiffusionTrainer_cond(net_model, beta_1, beta_T, T).to(device)
-        sampler = GaussianDiffusionSampler_cond(net_model, beta_1, beta_T, T).to(device)
+        sampler = GaussianDiffusionSampler_cond(net_model, beta_1, beta_T, T, 
+                                               sampling_timesteps=sampling_timesteps).to(device)
     
     elif model_name == "DIFFDDPM":
         trainer = DiffDDPMTrainer_cond(net_model, beta_1, beta_T, T).to(device)
-        sampler = DiffDDPMSampler_cond(net_model, beta_1, beta_T, T).to(device)
+        sampler = DiffDDPMSampler_cond(net_model, beta_1, beta_T, T,
+                                      sampling_timesteps=sampling_timesteps).to(device)
     
     # 注意力模型
     elif model_name == "midattnDDPM":
         trainer = MidAttnDDPMTrainer_cond(net_model, beta_1, beta_T, T).to(device)
         sampler = MidAttnDDPMSampler_cond(net_model, beta_1, beta_T, T, 
-                                        kwargs.get("psi", 1.0), kwargs.get("s", 0.1)).to(device)
+                                        kwargs.get("psi", 1.0), kwargs.get("s", 0.1),
+                                        sampling_timesteps=sampling_timesteps).to(device)
     
     elif model_name == "UpAttnDDPM":
         trainer = UpAttnDDPMTrainer_cond(net_model, beta_1, beta_T, T).to(device)
         sampler = UpAttnDDPMSampler_cond(net_model, beta_1, beta_T, T,
-                                       kwargs.get("psi", 1.0), kwargs.get("s", 0.1)).to(device)
+                                       kwargs.get("psi", 1.0), kwargs.get("s", 0.1),
+                                       sampling_timesteps=sampling_timesteps).to(device)
     
     # 小波模型
     elif model_name == "WTDDPM":
         trainer = WTDDPMTrainer_cond(net_model, beta_1, beta_T, T).to(device)
-        sampler = WTDDPMSampler_cond(net_model, beta_1, beta_T, T).to(device)
+        sampler = WTDDPMSampler_cond(net_model, beta_1, beta_T, T,
+                                    sampling_timesteps=sampling_timesteps).to(device)
     
-    # D3CG模型系列
+    # 条件D3CG模型系列
     elif model_name in D3CG_CONFIGS:
         config = D3CG_CONFIGS[model_name].copy()
         
@@ -137,10 +174,18 @@ def get_trainer_sampler(model_name, net_model, beta_1, beta_T, T, device, **kwar
                     nonlinear_params["scale"] = kwargs["scale"]
             config["nonlinear_params"] = nonlinear_params
         
-        trainer = create_d3cg_trainer(net_model, beta_1, beta_T, T, config).to(device)
-        sampler = create_d3cg_sampler(net_model, beta_1, beta_T, T, config).to(device)
+        trainer = create_d3cg_trainer(net_model, beta_1, beta_T, T, config, is_uncond=False).to(device)
+        sampler = create_d3cg_sampler(net_model, beta_1, beta_T, T, config, is_uncond=False,
+                                     sampling_timesteps=sampling_timesteps).to(device)
     
-    # 自定义D3CG配置
+    # 无条件D3CG模型系列
+    elif model_name in D3CG_UNCOND_CONFIGS:
+        config = D3CG_UNCOND_CONFIGS[model_name].copy()
+        trainer = create_d3cg_trainer(net_model, beta_1, beta_T, T, config, is_uncond=True).to(device)
+        sampler = create_d3cg_sampler(net_model, beta_1, beta_T, T, config, is_uncond=True,
+                                     sampling_timesteps=sampling_timesteps).to(device)
+    
+    # 自定义条件D3CG配置
     elif model_name == "D3CG_custom":
         nonlinear_type = kwargs.get("nonlinear_type", "linear")
         
@@ -163,8 +208,20 @@ def get_trainer_sampler(model_name, net_model, beta_1, beta_T, T, device, **kwar
             "backend": kwargs.get("backend", "pytorch"),
             "nonlinear_params": nonlinear_params
         }
-        trainer = create_d3cg_trainer(net_model, beta_1, beta_T, T, config).to(device)
-        sampler = create_d3cg_sampler(net_model, beta_1, beta_T, T, config).to(device)
+        trainer = create_d3cg_trainer(net_model, beta_1, beta_T, T, config, is_uncond=False).to(device)
+        sampler = create_d3cg_sampler(net_model, beta_1, beta_T, T, config, is_uncond=False,
+                                     sampling_timesteps=sampling_timesteps).to(device)
+    
+    # 自定义无条件D3CG配置
+    elif model_name == "D3CG_custom_uncond":
+        config = {
+            "wave_type": kwargs.get("wave_type", "haar"),
+            "transform_levels": kwargs.get("transform_levels", 1),
+            "backend": kwargs.get("backend", "pytorch")
+        }
+        trainer = create_d3cg_trainer(net_model, beta_1, beta_T, T, config, is_uncond=True).to(device)
+        sampler = create_d3cg_sampler(net_model, beta_1, beta_T, T, config, is_uncond=True,
+                                     sampling_timesteps=sampling_timesteps).to(device)
     
     else:
         raise ValueError(f"Unknown model name: {model_name}")
@@ -176,13 +233,15 @@ def get_available_models():
     """获取所有可用的模型名称"""
     base_models = ["DDPM", "DIFFDDPM", "midattnDDPM", "UpAttnDDPM", "WTDDPM"]
     d3cg_models = list(D3CG_CONFIGS.keys())
-    custom_models = ["D3CG_custom"]
+    d3cg_uncond_models = list(D3CG_UNCOND_CONFIGS.keys())
+    custom_models = ["D3CG_custom", "D3CG_custom_uncond"]
     
     return {
         "base_models": base_models,
-        "d3cg_models": d3cg_models, 
+        "d3cg_models": d3cg_models,
+        "d3cg_uncond_models": d3cg_uncond_models,
         "custom_models": custom_models,
-        "all_models": base_models + d3cg_models + custom_models
+        "all_models": base_models + d3cg_models + d3cg_uncond_models + custom_models
     }
 
 
@@ -195,13 +254,18 @@ def print_model_info():
     for model in models["base_models"]:
         print(f"  - {model}")
     
-    print("\n2. D3CG Models:")
+    print("\n2. Conditional D3CG Models:")
     for model in models["d3cg_models"]:
         config = D3CG_CONFIGS[model]
         print(f"  - {model}: {config['wave_type']} wavelet, {config['nonlinear_type']} nonlinear, {config['transform_levels']} levels")
     
-    print("\n3. Custom Models:")
+    print("\n3. Unconditional D3CG Models:")
+    for model in models["d3cg_uncond_models"]:
+        config = D3CG_UNCOND_CONFIGS[model]
+        print(f"  - {model}: {config['wave_type']} wavelet, {config['transform_levels']} levels")
+    
+    print("\n4. Custom Models:")
     for model in models["custom_models"]:
-        print(f"  - {model}: Configurable D3CG model")
+        print(f"  - {model}: D3CG custom models")
     
     print(f"\nTotal: {len(models['all_models'])} models available")
