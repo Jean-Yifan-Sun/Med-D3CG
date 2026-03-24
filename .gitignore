@@ -1,4 +1,5 @@
 /data/*
 /jobs/res/*
 *.pyc
-/results
+*.png
+*.pt

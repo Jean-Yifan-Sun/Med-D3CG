@@ -1,0 +1,539 @@
+2026-03-12 11:30:08,507 [INFO] Args: Namespace(model_name='D3CG_uncond_db4', wave_type='db4', transform_levels=1, dataset_dir='/bask/projects/c/chenhp-data-gen/yifansun/project/Med-D3CG/data/acdc_wholeheart/25022_JPGs', val_dataset_dir='./data/medical_images_val', is_rgb=False, out_name='acdc_uncond_db4_new', batch_size=4, T=1000, ch=64, ch_mult=[1, 2, 3, 4], attn=[2], num_res_blocks=2, dropout=0.1, lr=2e-05, n_epochs=500, beta_1=0.0001, beta_T=0.02, grad_clip=1.0, image_size=96, save_weight_dir='./results/acdc_unconditional', resume_ckpt='', start_epoch=1, val_start_epoch=100, val_num=8, save_interval=50, list_models=False)
+2026-03-12 11:30:08,508 [INFO] Model: D3CG_uncond_db4
+2026-03-12 11:30:08,508 [INFO] Device: cuda:0
+2026-03-12 11:30:08,508 [INFO] Loading datasets...
+2026-03-12 11:30:53,148 [INFO] Dataset initialized with root_dir: /bask/projects/c/chenhp-data-gen/yifansun/project/Med-D3CG/data/acdc_wholeheart/25022_JPGs
+2026-03-12 11:30:53,149 [INFO] Found 25022 image files
+2026-03-12 11:30:53,174 [INFO] Training dataset size: 25022
+2026-03-12 11:30:53,174 [INFO] Initializing model with in_channels=1, out_channels=1
+2026-03-12 11:30:53,897 [INFO] Initializing trainer and sampler...
+2026-03-12 11:30:53,903 [INFO] Starting model profiling...
+2026-03-12 11:30:56,355 [INFO] Model profiling completed:
+2026-03-12 11:30:56,355 [INFO]   Parameters: 20.83M
+2026-03-12 11:30:56,355 [INFO]   FLOPs: 16.724G
+2026-03-12 11:30:56,355 [INFO]   Memory: 0.0MB
+2026-03-12 11:30:56,355 [INFO]   Inference Time: 21.03ms
+2026-03-12 11:41:08,608 [INFO] epoch 0001: loss = 2294.956313, elapsed = 0:10:12.252843
+2026-03-12 11:41:08,921 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0001.pt
+2026-03-12 11:51:25,184 [INFO] epoch 0002: loss = 1512.913530, elapsed = 0:10:16.575480
+2026-03-12 11:51:25,466 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0002.pt
+2026-03-12 12:01:37,098 [INFO] epoch 0003: loss = 1416.015672, elapsed = 0:10:11.914664
+2026-03-12 12:01:37,301 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0003.pt
+2026-03-12 12:11:53,756 [INFO] epoch 0004: loss = 1399.860055, elapsed = 0:10:16.657972
+2026-03-12 12:11:53,921 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0004.pt
+2026-03-12 12:22:10,122 [INFO] epoch 0005: loss = 1356.240415, elapsed = 0:10:16.365632
+2026-03-12 12:22:10,309 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0005.pt
+2026-03-12 12:32:26,373 [INFO] epoch 0006: loss = 1305.166410, elapsed = 0:10:16.250717
+2026-03-12 12:32:26,564 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0006.pt
+2026-03-12 12:42:43,188 [INFO] epoch 0007: loss = 1331.289311, elapsed = 0:10:16.814953
+2026-03-12 12:52:59,926 [INFO] epoch 0008: loss = 1237.313600, elapsed = 0:10:16.738718
+2026-03-12 12:53:00,102 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0008.pt
+2026-03-12 13:03:17,045 [INFO] epoch 0009: loss = 1250.105021, elapsed = 0:10:17.118741
+2026-03-12 13:13:36,368 [INFO] epoch 0010: loss = 1194.425597, elapsed = 0:10:19.322992
+2026-03-12 13:13:36,552 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0010.pt
+2026-03-12 13:23:54,706 [INFO] epoch 0011: loss = 1238.285585, elapsed = 0:10:18.337668
+2026-03-12 13:34:11,019 [INFO] epoch 0012: loss = 1179.090493, elapsed = 0:10:16.313079
+2026-03-12 13:34:11,213 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0012.pt
+2026-03-12 13:44:24,601 [INFO] epoch 0013: loss = 1152.601301, elapsed = 0:10:13.581715
+2026-03-12 13:44:24,785 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0013.pt
+2026-03-12 13:54:35,870 [INFO] epoch 0014: loss = 1126.883720, elapsed = 0:10:11.269894
+2026-03-12 13:54:36,059 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0014.pt
+2026-03-12 14:04:53,219 [INFO] epoch 0015: loss = 1151.311348, elapsed = 0:10:17.348760
+2026-03-12 14:15:09,735 [INFO] epoch 0016: loss = 1123.255789, elapsed = 0:10:16.516224
+2026-03-12 14:15:09,908 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0016.pt
+2026-03-12 14:25:27,178 [INFO] epoch 0017: loss = 1122.983847, elapsed = 0:10:17.442751
+2026-03-12 14:25:27,383 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0017.pt
+2026-03-12 14:35:44,356 [INFO] epoch 0018: loss = 1110.163143, elapsed = 0:10:17.177636
+2026-03-12 14:35:44,543 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0018.pt
+2026-03-12 14:46:01,229 [INFO] epoch 0019: loss = 1079.045406, elapsed = 0:10:16.873044
+2026-03-12 14:46:01,413 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0019.pt
+2026-03-12 14:56:18,223 [INFO] epoch 0020: loss = 1101.420372, elapsed = 0:10:16.994184
+2026-03-12 15:06:35,525 [INFO] epoch 0021: loss = 1103.842007, elapsed = 0:10:17.301799
+2026-03-12 15:16:52,592 [INFO] epoch 0022: loss = 1113.323495, elapsed = 0:10:17.066659
+2026-03-12 15:27:09,791 [INFO] epoch 0023: loss = 1065.645549, elapsed = 0:10:17.199086
+2026-03-12 15:27:09,982 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0023.pt
+2026-03-12 15:37:27,350 [INFO] epoch 0024: loss = 1108.007096, elapsed = 0:10:17.559630
+2026-03-12 15:47:45,483 [INFO] epoch 0025: loss = 1070.689641, elapsed = 0:10:18.132244
+2026-03-12 15:58:03,188 [INFO] epoch 0026: loss = 1021.723006, elapsed = 0:10:17.705529
+2026-03-12 15:58:03,365 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0026.pt
+2026-03-12 16:08:22,255 [INFO] epoch 0027: loss = 1030.209101, elapsed = 0:10:19.067092
+2026-03-12 16:18:40,826 [INFO] epoch 0028: loss = 1036.466604, elapsed = 0:10:18.570415
+2026-03-12 16:28:58,477 [INFO] epoch 0029: loss = 1053.161660, elapsed = 0:10:17.650978
+2026-03-12 16:39:16,230 [INFO] epoch 0030: loss = 1033.135644, elapsed = 0:10:17.753615
+2026-03-12 16:49:33,917 [INFO] epoch 0031: loss = 974.571719, elapsed = 0:10:17.686696
+2026-03-12 16:49:34,082 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0031.pt
+2026-03-12 16:59:36,629 [INFO] epoch 0032: loss = 994.362338, elapsed = 0:10:02.712507
+2026-03-12 17:09:41,925 [INFO] epoch 0033: loss = 1004.722182, elapsed = 0:10:05.295607
+2026-03-12 17:19:59,818 [INFO] epoch 0034: loss = 1017.662962, elapsed = 0:10:17.892870
+2026-03-12 17:30:17,430 [INFO] epoch 0035: loss = 985.489524, elapsed = 0:10:17.612481
+2026-03-12 17:40:35,795 [INFO] epoch 0036: loss = 983.340373, elapsed = 0:10:18.364325
+2026-03-12 17:50:54,065 [INFO] epoch 0037: loss = 1000.825492, elapsed = 0:10:18.270457
+2026-03-12 18:01:11,414 [INFO] epoch 0038: loss = 977.285743, elapsed = 0:10:17.349389
+2026-03-12 18:11:29,535 [INFO] epoch 0039: loss = 988.279318, elapsed = 0:10:18.120633
+2026-03-12 18:21:47,583 [INFO] epoch 0040: loss = 967.813352, elapsed = 0:10:18.048172
+2026-03-12 18:21:47,768 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0040.pt
+2026-03-12 18:32:05,033 [INFO] epoch 0041: loss = 948.718881, elapsed = 0:10:17.449410
+2026-03-12 18:32:05,230 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0041.pt
+2026-03-12 18:42:23,474 [INFO] epoch 0042: loss = 988.831488, elapsed = 0:10:18.441699
+2026-03-12 18:52:41,217 [INFO] epoch 0043: loss = 975.134946, elapsed = 0:10:17.742686
+2026-03-12 19:02:59,300 [INFO] epoch 0044: loss = 958.098935, elapsed = 0:10:18.082767
+2026-03-12 19:13:16,955 [INFO] epoch 0045: loss = 947.536986, elapsed = 0:10:17.655202
+2026-03-12 19:13:17,126 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0045.pt
+2026-03-12 19:23:35,382 [INFO] epoch 0046: loss = 958.510738, elapsed = 0:10:18.426789
+2026-03-12 19:33:53,232 [INFO] epoch 0047: loss = 969.490952, elapsed = 0:10:17.850143
+2026-03-12 19:44:11,166 [INFO] epoch 0048: loss = 936.120944, elapsed = 0:10:17.934160
+2026-03-12 19:44:11,326 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0048.pt
+2026-03-12 19:54:29,142 [INFO] epoch 0049: loss = 939.129931, elapsed = 0:10:17.976065
+2026-03-12 20:04:47,141 [INFO] epoch 0050: loss = 913.302492, elapsed = 0:10:17.998557
+2026-03-12 20:04:47,329 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0050.pt
+2026-03-12 20:04:47,497 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0050.pt
+2026-03-12 20:15:04,915 [INFO] epoch 0051: loss = 955.486469, elapsed = 0:10:17.774335
+2026-03-12 20:25:22,488 [INFO] epoch 0052: loss = 942.710219, elapsed = 0:10:17.572665
+2026-03-12 20:35:39,603 [INFO] epoch 0053: loss = 951.802464, elapsed = 0:10:17.115647
+2026-03-12 20:45:57,286 [INFO] epoch 0054: loss = 923.486026, elapsed = 0:10:17.682531
+2026-03-12 20:56:14,165 [INFO] epoch 0055: loss = 944.154943, elapsed = 0:10:16.879195
+2026-03-12 21:06:32,446 [INFO] epoch 0056: loss = 927.995766, elapsed = 0:10:18.280835
+2026-03-12 21:16:49,917 [INFO] epoch 0057: loss = 910.450668, elapsed = 0:10:17.471384
+2026-03-12 21:16:50,088 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0057.pt
+2026-03-12 21:27:07,549 [INFO] epoch 0058: loss = 890.647294, elapsed = 0:10:17.631390
+2026-03-12 21:27:07,735 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0058.pt
+2026-03-12 21:37:25,069 [INFO] epoch 0059: loss = 912.186789, elapsed = 0:10:17.520161
+2026-03-12 21:47:41,804 [INFO] epoch 0060: loss = 935.659503, elapsed = 0:10:16.735586
+2026-03-12 21:57:57,705 [INFO] epoch 0061: loss = 912.717084, elapsed = 0:10:15.900566
+2026-03-12 22:08:14,952 [INFO] epoch 0062: loss = 895.886897, elapsed = 0:10:17.247226
+2026-03-12 22:18:26,465 [INFO] epoch 0063: loss = 897.664635, elapsed = 0:10:11.513156
+2026-03-12 22:28:43,170 [INFO] epoch 0064: loss = 862.505878, elapsed = 0:10:16.704886
+2026-03-12 22:28:43,355 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0064.pt
+2026-03-12 22:38:59,246 [INFO] epoch 0065: loss = 927.219294, elapsed = 0:10:16.075539
+2026-03-12 22:49:15,827 [INFO] epoch 0066: loss = 891.060291, elapsed = 0:10:16.581383
+2026-03-12 22:59:31,806 [INFO] epoch 0067: loss = 886.079696, elapsed = 0:10:15.979024
+2026-03-12 23:09:49,820 [INFO] epoch 0068: loss = 873.502878, elapsed = 0:10:18.014138
+2026-03-12 23:20:07,084 [INFO] epoch 0069: loss = 916.791246, elapsed = 0:10:17.263974
+2026-03-12 23:30:25,790 [INFO] epoch 0070: loss = 891.834119, elapsed = 0:10:18.705958
+2026-03-12 23:40:38,393 [INFO] epoch 0071: loss = 899.306363, elapsed = 0:10:12.603117
+2026-03-12 23:50:48,394 [INFO] epoch 0072: loss = 890.698449, elapsed = 0:10:10.000065
+2026-03-13 00:01:03,501 [INFO] epoch 0073: loss = 880.245917, elapsed = 0:10:15.107609
+2026-03-13 00:11:20,688 [INFO] epoch 0074: loss = 901.232546, elapsed = 0:10:17.187236
+2026-03-13 00:21:39,295 [INFO] epoch 0075: loss = 886.516322, elapsed = 0:10:18.606327
+2026-03-13 00:31:57,286 [INFO] epoch 0076: loss = 892.060221, elapsed = 0:10:17.991777
+2026-03-13 00:42:11,757 [INFO] epoch 0077: loss = 875.794756, elapsed = 0:10:14.470585
+2026-03-13 00:52:23,499 [INFO] epoch 0078: loss = 883.444224, elapsed = 0:10:11.741551
+2026-03-13 01:02:39,469 [INFO] epoch 0079: loss = 836.894005, elapsed = 0:10:15.970104
+2026-03-13 01:02:39,648 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0079.pt
+2026-03-13 01:12:57,587 [INFO] epoch 0080: loss = 880.406741, elapsed = 0:10:18.118147
+2026-03-13 01:23:14,980 [INFO] epoch 0081: loss = 870.974293, elapsed = 0:10:17.392813
+2026-03-13 01:33:32,941 [INFO] epoch 0082: loss = 822.767069, elapsed = 0:10:17.960925
+2026-03-13 01:33:33,130 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0082.pt
+2026-03-13 01:43:51,089 [INFO] epoch 0083: loss = 854.025300, elapsed = 0:10:18.147906
+2026-03-13 01:54:09,487 [INFO] epoch 0084: loss = 872.833489, elapsed = 0:10:18.398938
+2026-03-13 02:04:25,289 [INFO] epoch 0085: loss = 869.770275, elapsed = 0:10:15.801605
+2026-03-13 02:14:42,980 [INFO] epoch 0086: loss = 869.145935, elapsed = 0:10:17.691317
+2026-03-13 02:24:59,934 [INFO] epoch 0087: loss = 854.819561, elapsed = 0:10:16.953268
+2026-03-13 02:35:16,275 [INFO] epoch 0088: loss = 834.288838, elapsed = 0:10:16.341576
+2026-03-13 02:45:32,555 [INFO] epoch 0089: loss = 887.933633, elapsed = 0:10:16.279767
+2026-03-13 02:55:50,318 [INFO] epoch 0090: loss = 861.433755, elapsed = 0:10:17.762753
+2026-03-13 03:06:07,493 [INFO] epoch 0091: loss = 852.378335, elapsed = 0:10:17.175717
+2026-03-13 03:16:25,184 [INFO] epoch 0092: loss = 877.112176, elapsed = 0:10:17.690208
+2026-03-13 03:26:42,140 [INFO] epoch 0093: loss = 843.902521, elapsed = 0:10:16.955845
+2026-03-13 03:36:59,464 [INFO] epoch 0094: loss = 857.312590, elapsed = 0:10:17.324143
+2026-03-13 03:47:16,976 [INFO] epoch 0095: loss = 850.432060, elapsed = 0:10:17.511854
+2026-03-13 03:57:34,814 [INFO] epoch 0096: loss = 827.835324, elapsed = 0:10:17.838448
+2026-03-13 04:07:52,309 [INFO] epoch 0097: loss = 819.419067, elapsed = 0:10:17.494786
+2026-03-13 04:07:52,502 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0097.pt
+2026-03-13 04:18:09,760 [INFO] epoch 0098: loss = 867.130952, elapsed = 0:10:17.451748
+2026-03-13 04:28:27,831 [INFO] epoch 0099: loss = 848.073071, elapsed = 0:10:18.070158
+2026-03-13 04:38:45,706 [INFO] epoch 0100: loss = 843.143899, elapsed = 0:10:17.875010
+2026-03-13 04:38:45,706 [INFO] Generating samples for epoch 100...
+2026-03-13 04:41:07,272 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0100_samples
+2026-03-13 04:41:07,548 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0100.pt
+2026-03-13 04:51:24,710 [INFO] epoch 0101: loss = 827.368075, elapsed = 0:12:39.004128
+2026-03-13 05:01:42,964 [INFO] epoch 0102: loss = 836.440015, elapsed = 0:10:18.254604
+2026-03-13 05:12:02,191 [INFO] epoch 0103: loss = 848.554768, elapsed = 0:10:19.226148
+2026-03-13 05:22:19,854 [INFO] epoch 0104: loss = 815.507303, elapsed = 0:10:17.663603
+2026-03-13 05:22:20,032 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0104.pt
+2026-03-13 05:32:37,348 [INFO] epoch 0105: loss = 866.222198, elapsed = 0:10:17.493779
+2026-03-13 05:42:54,922 [INFO] epoch 0106: loss = 829.278037, elapsed = 0:10:17.573855
+2026-03-13 05:53:13,146 [INFO] epoch 0107: loss = 843.707002, elapsed = 0:10:18.224250
+2026-03-13 06:03:31,236 [INFO] epoch 0108: loss = 830.645984, elapsed = 0:10:18.089629
+2026-03-13 06:13:48,241 [INFO] epoch 0109: loss = 809.824762, elapsed = 0:10:17.005289
+2026-03-13 06:13:48,422 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0109.pt
+2026-03-13 06:24:05,151 [INFO] epoch 0110: loss = 800.298454, elapsed = 0:10:16.909680
+2026-03-13 06:24:05,312 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0110.pt
+2026-03-13 06:34:23,103 [INFO] epoch 0111: loss = 840.486105, elapsed = 0:10:17.952818
+2026-03-13 06:44:40,707 [INFO] epoch 0112: loss = 819.385234, elapsed = 0:10:17.603326
+2026-03-13 06:54:58,707 [INFO] epoch 0113: loss = 878.017251, elapsed = 0:10:17.999865
+2026-03-13 07:05:15,665 [INFO] epoch 0114: loss = 774.149078, elapsed = 0:10:16.957865
+2026-03-13 07:05:15,859 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0114.pt
+2026-03-13 07:15:34,871 [INFO] epoch 0115: loss = 790.890270, elapsed = 0:10:19.206662
+2026-03-13 07:25:53,397 [INFO] epoch 0116: loss = 820.319411, elapsed = 0:10:18.525898
+2026-03-13 07:36:09,929 [INFO] epoch 0117: loss = 855.031813, elapsed = 0:10:16.532370
+2026-03-13 07:46:26,857 [INFO] epoch 0118: loss = 833.740803, elapsed = 0:10:16.927341
+2026-03-13 07:56:42,882 [INFO] epoch 0119: loss = 802.704262, elapsed = 0:10:16.025461
+2026-03-13 08:07:00,759 [INFO] epoch 0120: loss = 805.705263, elapsed = 0:10:17.877185
+2026-03-13 08:17:17,755 [INFO] epoch 0121: loss = 823.027016, elapsed = 0:10:16.995893
+2026-03-13 08:27:32,929 [INFO] epoch 0122: loss = 785.004544, elapsed = 0:10:15.173523
+2026-03-13 08:37:40,278 [INFO] epoch 0123: loss = 834.028784, elapsed = 0:10:07.348999
+2026-03-13 08:47:48,046 [INFO] epoch 0124: loss = 795.540536, elapsed = 0:10:07.768272
+2026-03-13 08:57:55,782 [INFO] epoch 0125: loss = 822.365540, elapsed = 0:10:07.736374
+2026-03-13 09:08:05,021 [INFO] epoch 0126: loss = 776.866669, elapsed = 0:10:09.238556
+2026-03-13 09:18:13,666 [INFO] epoch 0127: loss = 808.761712, elapsed = 0:10:08.644728
+2026-03-13 09:28:22,752 [INFO] epoch 0128: loss = 784.158873, elapsed = 0:10:09.086629
+2026-03-13 09:38:30,610 [INFO] epoch 0129: loss = 799.729143, elapsed = 0:10:07.857599
+2026-03-13 09:48:42,768 [INFO] epoch 0130: loss = 788.405460, elapsed = 0:10:12.158272
+2026-03-13 09:58:57,371 [INFO] epoch 0131: loss = 836.944925, elapsed = 0:10:14.602976
+2026-03-13 10:09:11,611 [INFO] epoch 0132: loss = 813.355923, elapsed = 0:10:14.239945
+2026-03-13 10:19:26,129 [INFO] epoch 0133: loss = 844.083526, elapsed = 0:10:14.517949
+2026-03-13 10:29:40,685 [INFO] epoch 0134: loss = 797.121478, elapsed = 0:10:14.555698
+2026-03-13 10:39:54,236 [INFO] epoch 0135: loss = 795.307264, elapsed = 0:10:13.551377
+2026-03-13 10:50:09,914 [INFO] epoch 0136: loss = 818.010943, elapsed = 0:10:15.677792
+2026-03-13 11:00:24,064 [INFO] epoch 0137: loss = 796.843973, elapsed = 0:10:14.150288
+2026-03-13 11:10:38,370 [INFO] epoch 0138: loss = 810.106398, elapsed = 0:10:14.306155
+2026-03-13 11:20:56,106 [INFO] epoch 0139: loss = 813.062592, elapsed = 0:10:17.735882
+2026-03-13 11:31:14,002 [INFO] epoch 0140: loss = 744.258357, elapsed = 0:10:17.895481
+2026-03-13 11:31:14,205 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0140.pt
+2026-03-13 11:41:29,915 [INFO] epoch 0141: loss = 814.728343, elapsed = 0:10:15.912753
+2026-03-13 11:51:45,899 [INFO] epoch 0142: loss = 767.643926, elapsed = 0:10:15.984264
+2026-03-13 12:02:02,326 [INFO] epoch 0143: loss = 817.356222, elapsed = 0:10:16.427494
+2026-03-13 12:12:18,051 [INFO] epoch 0144: loss = 805.466302, elapsed = 0:10:15.724949
+2026-03-13 12:22:33,549 [INFO] epoch 0145: loss = 786.991254, elapsed = 0:10:15.497981
+2026-03-13 12:32:49,899 [INFO] epoch 0146: loss = 790.531390, elapsed = 0:10:16.349938
+2026-03-13 12:43:06,427 [INFO] epoch 0147: loss = 785.377392, elapsed = 0:10:16.527910
+2026-03-13 12:53:23,801 [INFO] epoch 0148: loss = 837.668902, elapsed = 0:10:17.373581
+2026-03-13 13:03:39,588 [INFO] epoch 0149: loss = 797.459357, elapsed = 0:10:15.787686
+2026-03-13 13:13:55,838 [INFO] epoch 0150: loss = 799.122222, elapsed = 0:10:16.250089
+2026-03-13 13:13:55,839 [INFO] Generating samples for epoch 150...
+2026-03-13 13:16:16,674 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0150_samples
+2026-03-13 13:16:16,840 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0150.pt
+2026-03-13 13:26:32,157 [INFO] epoch 0151: loss = 776.691817, elapsed = 0:12:36.318856
+2026-03-13 13:36:49,105 [INFO] epoch 0152: loss = 765.251660, elapsed = 0:10:16.948005
+2026-03-13 13:47:05,814 [INFO] epoch 0153: loss = 796.620026, elapsed = 0:10:16.708251
+2026-03-13 13:57:21,661 [INFO] epoch 0154: loss = 821.982386, elapsed = 0:10:15.847510
+2026-03-13 14:07:37,630 [INFO] epoch 0155: loss = 787.501903, elapsed = 0:10:15.968882
+2026-03-13 14:17:53,462 [INFO] epoch 0156: loss = 821.668335, elapsed = 0:10:15.831758
+2026-03-13 14:28:09,887 [INFO] epoch 0157: loss = 772.785072, elapsed = 0:10:16.425194
+2026-03-13 14:38:25,684 [INFO] epoch 0158: loss = 791.986148, elapsed = 0:10:15.796718
+2026-03-13 14:48:47,455 [INFO] epoch 0159: loss = 799.849512, elapsed = 0:10:21.771658
+2026-03-13 14:59:07,017 [INFO] epoch 0160: loss = 783.474563, elapsed = 0:10:19.562146
+2026-03-13 15:09:21,732 [INFO] epoch 0161: loss = 781.673329, elapsed = 0:10:14.714734
+2026-03-13 15:19:42,256 [INFO] epoch 0162: loss = 788.860343, elapsed = 0:10:20.523649
+2026-03-13 15:30:01,069 [INFO] epoch 0163: loss = 775.978996, elapsed = 0:10:18.813328
+2026-03-13 15:40:46,803 [INFO] epoch 0164: loss = 809.739351, elapsed = 0:10:45.733479
+2026-03-13 15:51:34,310 [INFO] epoch 0165: loss = 792.782476, elapsed = 0:10:47.507797
+2026-03-13 16:02:20,722 [INFO] epoch 0166: loss = 769.593803, elapsed = 0:10:46.411381
+2026-03-13 16:13:08,152 [INFO] epoch 0167: loss = 810.718198, elapsed = 0:10:47.430225
+2026-03-13 16:23:55,068 [INFO] epoch 0168: loss = 804.509815, elapsed = 0:10:46.916420
+2026-03-13 16:34:42,843 [INFO] epoch 0169: loss = 800.060658, elapsed = 0:10:47.774852
+2026-03-13 16:45:30,376 [INFO] epoch 0170: loss = 781.692487, elapsed = 0:10:47.533167
+2026-03-13 16:56:17,950 [INFO] epoch 0171: loss = 784.140865, elapsed = 0:10:47.573294
+2026-03-13 17:07:04,873 [INFO] epoch 0172: loss = 785.513881, elapsed = 0:10:46.922887
+2026-03-13 17:17:51,671 [INFO] epoch 0173: loss = 792.333465, elapsed = 0:10:46.798563
+2026-03-13 17:28:38,516 [INFO] epoch 0174: loss = 775.883056, elapsed = 0:10:46.844345
+2026-03-13 17:39:26,137 [INFO] epoch 0175: loss = 793.544233, elapsed = 0:10:47.621591
+2026-03-13 17:50:12,886 [INFO] epoch 0176: loss = 798.930412, elapsed = 0:10:46.749030
+2026-03-13 18:00:59,911 [INFO] epoch 0177: loss = 827.866384, elapsed = 0:10:47.024509
+2026-03-13 18:11:46,775 [INFO] epoch 0178: loss = 799.100450, elapsed = 0:10:46.864366
+2026-03-13 18:22:32,994 [INFO] epoch 0179: loss = 775.331611, elapsed = 0:10:46.218853
+2026-03-13 18:33:19,752 [INFO] epoch 0180: loss = 798.039871, elapsed = 0:10:46.757651
+2026-03-13 18:44:06,816 [INFO] epoch 0181: loss = 776.453956, elapsed = 0:10:47.064364
+2026-03-13 18:54:53,691 [INFO] epoch 0182: loss = 774.907362, elapsed = 0:10:46.874753
+2026-03-13 19:05:39,412 [INFO] epoch 0183: loss = 776.306408, elapsed = 0:10:45.721050
+2026-03-13 19:16:23,449 [INFO] epoch 0184: loss = 757.671220, elapsed = 0:10:44.037022
+2026-03-13 19:27:11,768 [INFO] epoch 0185: loss = 748.488778, elapsed = 0:10:48.319014
+2026-03-13 19:37:59,852 [INFO] epoch 0186: loss = 764.975760, elapsed = 0:10:48.084408
+2026-03-13 19:48:48,024 [INFO] epoch 0187: loss = 759.713098, elapsed = 0:10:48.171571
+2026-03-13 19:59:35,047 [INFO] epoch 0188: loss = 756.830857, elapsed = 0:10:47.022964
+2026-03-13 20:10:22,527 [INFO] epoch 0189: loss = 776.398513, elapsed = 0:10:47.479970
+2026-03-13 20:21:09,864 [INFO] epoch 0190: loss = 770.297327, elapsed = 0:10:47.337463
+2026-03-13 20:31:56,873 [INFO] epoch 0191: loss = 745.108603, elapsed = 0:10:47.008970
+2026-03-13 20:42:42,628 [INFO] epoch 0192: loss = 767.457421, elapsed = 0:10:45.754939
+2026-03-13 20:53:28,857 [INFO] epoch 0193: loss = 784.327321, elapsed = 0:10:46.229027
+2026-03-13 21:04:14,920 [INFO] epoch 0194: loss = 796.230705, elapsed = 0:10:46.063188
+2026-03-13 21:15:00,925 [INFO] epoch 0195: loss = 770.975623, elapsed = 0:10:46.004230
+2026-03-13 21:25:48,681 [INFO] epoch 0196: loss = 764.720029, elapsed = 0:10:47.756384
+2026-03-13 21:36:35,349 [INFO] epoch 0197: loss = 752.044878, elapsed = 0:10:46.667904
+2026-03-13 21:47:22,592 [INFO] epoch 0198: loss = 764.185003, elapsed = 0:10:47.243374
+2026-03-13 21:58:09,820 [INFO] epoch 0199: loss = 782.090325, elapsed = 0:10:47.227545
+2026-03-13 22:08:55,910 [INFO] epoch 0200: loss = 755.619232, elapsed = 0:10:46.090148
+2026-03-13 22:08:55,910 [INFO] Generating samples for epoch 200...
+2026-03-13 22:11:21,236 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0200_samples
+2026-03-13 22:11:21,388 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0200.pt
+2026-03-13 22:22:08,190 [INFO] epoch 0201: loss = 772.851146, elapsed = 0:13:12.280223
+2026-03-13 22:32:54,882 [INFO] epoch 0202: loss = 793.005407, elapsed = 0:10:46.691743
+2026-03-13 22:43:41,806 [INFO] epoch 0203: loss = 752.075272, elapsed = 0:10:46.924072
+2026-03-13 22:54:28,533 [INFO] epoch 0204: loss = 769.247044, elapsed = 0:10:46.727529
+2026-03-13 23:05:01,891 [INFO] epoch 0205: loss = 755.068557, elapsed = 0:10:33.357473
+2026-03-13 23:15:39,868 [INFO] epoch 0206: loss = 771.132158, elapsed = 0:10:37.977328
+2026-03-13 23:26:15,685 [INFO] epoch 0207: loss = 756.329806, elapsed = 0:10:35.816390
+2026-03-13 23:36:52,002 [INFO] epoch 0208: loss = 737.244053, elapsed = 0:10:36.317214
+2026-03-13 23:36:52,174 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0208.pt
+2026-03-13 23:47:29,026 [INFO] epoch 0209: loss = 774.288559, elapsed = 0:10:37.024384
+2026-03-13 23:58:05,162 [INFO] epoch 0210: loss = 769.492457, elapsed = 0:10:36.136041
+2026-03-14 00:08:40,282 [INFO] epoch 0211: loss = 748.768937, elapsed = 0:10:35.120009
+2026-03-14 00:19:16,345 [INFO] epoch 0212: loss = 767.441552, elapsed = 0:10:36.062243
+2026-03-14 00:29:52,199 [INFO] epoch 0213: loss = 767.043740, elapsed = 0:10:35.854175
+2026-03-14 00:40:27,809 [INFO] epoch 0214: loss = 751.276296, elapsed = 0:10:35.610167
+2026-03-14 00:51:02,623 [INFO] epoch 0215: loss = 750.425904, elapsed = 0:10:34.814023
+2026-03-14 01:01:38,401 [INFO] epoch 0216: loss = 743.289001, elapsed = 0:10:35.778395
+2026-03-14 01:12:13,933 [INFO] epoch 0217: loss = 756.263143, elapsed = 0:10:35.532177
+2026-03-14 01:22:48,558 [INFO] epoch 0218: loss = 732.608335, elapsed = 0:10:34.624973
+2026-03-14 01:22:48,736 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0218.pt
+2026-03-14 01:33:24,592 [INFO] epoch 0219: loss = 761.223200, elapsed = 0:10:36.033931
+2026-03-14 01:44:00,334 [INFO] epoch 0220: loss = 769.536254, elapsed = 0:10:35.741563
+2026-03-14 01:54:33,730 [INFO] epoch 0221: loss = 733.959749, elapsed = 0:10:33.395670
+2026-03-14 02:05:09,166 [INFO] epoch 0222: loss = 751.816633, elapsed = 0:10:35.436307
+2026-03-14 02:15:44,248 [INFO] epoch 0223: loss = 744.627521, elapsed = 0:10:35.082272
+2026-03-14 02:26:20,098 [INFO] epoch 0224: loss = 733.117278, elapsed = 0:10:35.849890
+2026-03-14 02:36:55,614 [INFO] epoch 0225: loss = 793.637707, elapsed = 0:10:35.515589
+2026-03-14 02:47:31,234 [INFO] epoch 0226: loss = 755.489988, elapsed = 0:10:35.620477
+2026-03-14 02:58:07,772 [INFO] epoch 0227: loss = 764.400306, elapsed = 0:10:36.538341
+2026-03-14 03:08:44,084 [INFO] epoch 0228: loss = 776.271953, elapsed = 0:10:36.311978
+2026-03-14 03:19:19,190 [INFO] epoch 0229: loss = 733.611519, elapsed = 0:10:35.105515
+2026-03-14 03:29:53,526 [INFO] epoch 0230: loss = 761.653719, elapsed = 0:10:34.335974
+2026-03-14 03:40:29,271 [INFO] epoch 0231: loss = 771.520097, elapsed = 0:10:35.745339
+2026-03-14 03:51:05,329 [INFO] epoch 0232: loss = 735.782535, elapsed = 0:10:36.057455
+2026-03-14 04:01:40,960 [INFO] epoch 0233: loss = 753.460075, elapsed = 0:10:35.631158
+2026-03-14 04:12:16,754 [INFO] epoch 0234: loss = 732.472015, elapsed = 0:10:35.794536
+2026-03-14 04:12:16,955 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0234.pt
+2026-03-14 04:22:52,963 [INFO] epoch 0235: loss = 739.066197, elapsed = 0:10:36.208776
+2026-03-14 04:33:28,962 [INFO] epoch 0236: loss = 733.769886, elapsed = 0:10:35.998541
+2026-03-14 04:44:04,854 [INFO] epoch 0237: loss = 753.864748, elapsed = 0:10:35.892236
+2026-03-14 04:54:40,538 [INFO] epoch 0238: loss = 715.560710, elapsed = 0:10:35.684182
+2026-03-14 04:54:40,708 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0238.pt
+2026-03-14 05:05:15,684 [INFO] epoch 0239: loss = 742.542094, elapsed = 0:10:35.146233
+2026-03-14 05:15:50,391 [INFO] epoch 0240: loss = 746.833821, elapsed = 0:10:34.706667
+2026-03-14 05:26:26,777 [INFO] epoch 0241: loss = 725.755421, elapsed = 0:10:36.386242
+2026-03-14 05:37:02,982 [INFO] epoch 0242: loss = 738.269968, elapsed = 0:10:36.204442
+2026-03-14 05:47:38,299 [INFO] epoch 0243: loss = 762.616235, elapsed = 0:10:35.317060
+2026-03-14 05:58:14,748 [INFO] epoch 0244: loss = 774.915131, elapsed = 0:10:36.449099
+2026-03-14 06:08:49,515 [INFO] epoch 0245: loss = 779.459972, elapsed = 0:10:34.767244
+2026-03-14 06:19:24,490 [INFO] epoch 0246: loss = 741.823909, elapsed = 0:10:34.974460
+2026-03-14 06:29:59,587 [INFO] epoch 0247: loss = 755.092705, elapsed = 0:10:35.097737
+2026-03-14 06:40:34,468 [INFO] epoch 0248: loss = 740.006358, elapsed = 0:10:34.880619
+2026-03-14 06:51:09,554 [INFO] epoch 0249: loss = 778.180897, elapsed = 0:10:35.085706
+2026-03-14 07:01:44,394 [INFO] epoch 0250: loss = 763.634940, elapsed = 0:10:34.840459
+2026-03-14 07:01:44,394 [INFO] Generating samples for epoch 250...
+2026-03-14 07:04:06,824 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0250_samples
+2026-03-14 07:04:06,989 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0250.pt
+2026-03-14 07:14:39,299 [INFO] epoch 0251: loss = 755.612551, elapsed = 0:12:54.905056
+2026-03-14 07:25:15,236 [INFO] epoch 0252: loss = 766.682305, elapsed = 0:10:35.936999
+2026-03-14 07:35:50,141 [INFO] epoch 0253: loss = 758.407870, elapsed = 0:10:34.904770
+2026-03-14 07:46:24,998 [INFO] epoch 0254: loss = 752.583036, elapsed = 0:10:34.856733
+2026-03-14 07:57:00,316 [INFO] epoch 0255: loss = 752.990932, elapsed = 0:10:35.318608
+2026-03-14 08:07:34,214 [INFO] epoch 0256: loss = 730.177572, elapsed = 0:10:33.897449
+2026-03-14 08:18:10,751 [INFO] epoch 0257: loss = 759.477321, elapsed = 0:10:36.537077
+2026-03-14 08:28:46,370 [INFO] epoch 0258: loss = 749.352786, elapsed = 0:10:35.619316
+2026-03-14 08:39:22,438 [INFO] epoch 0259: loss = 765.471838, elapsed = 0:10:36.067629
+2026-03-14 08:49:57,456 [INFO] epoch 0260: loss = 734.473809, elapsed = 0:10:35.018102
+2026-03-14 09:00:28,390 [INFO] epoch 0261: loss = 747.038408, elapsed = 0:10:30.934370
+2026-03-14 09:11:01,160 [INFO] epoch 0262: loss = 739.861721, elapsed = 0:10:32.769425
+2026-03-14 09:21:34,441 [INFO] epoch 0263: loss = 734.424176, elapsed = 0:10:33.281708
+2026-03-14 09:32:08,937 [INFO] epoch 0264: loss = 725.092620, elapsed = 0:10:34.495868
+2026-03-14 09:42:44,370 [INFO] epoch 0265: loss = 742.878823, elapsed = 0:10:35.433202
+2026-03-14 09:53:18,589 [INFO] epoch 0266: loss = 758.374073, elapsed = 0:10:34.218071
+2026-03-14 10:03:53,806 [INFO] epoch 0267: loss = 731.109542, elapsed = 0:10:35.217350
+2026-03-14 10:14:30,094 [INFO] epoch 0268: loss = 760.485865, elapsed = 0:10:36.287763
+2026-03-14 10:25:05,440 [INFO] epoch 0269: loss = 721.647162, elapsed = 0:10:35.346175
+2026-03-14 10:35:40,745 [INFO] epoch 0270: loss = 756.895201, elapsed = 0:10:35.305046
+2026-03-14 10:46:15,517 [INFO] epoch 0271: loss = 722.213800, elapsed = 0:10:34.771766
+2026-03-14 10:56:50,606 [INFO] epoch 0272: loss = 765.178009, elapsed = 0:10:35.089660
+2026-03-14 11:07:25,373 [INFO] epoch 0273: loss = 752.934872, elapsed = 0:10:34.767037
+2026-03-14 11:18:01,450 [INFO] epoch 0274: loss = 744.616058, elapsed = 0:10:36.076448
+2026-03-14 11:28:35,861 [INFO] epoch 0275: loss = 725.257282, elapsed = 0:10:34.410893
+2026-03-14 11:39:10,326 [INFO] epoch 0276: loss = 722.487674, elapsed = 0:10:34.465152
+2026-03-14 11:49:45,353 [INFO] epoch 0277: loss = 720.972898, elapsed = 0:10:35.027496
+2026-03-14 12:00:20,881 [INFO] epoch 0278: loss = 745.065940, elapsed = 0:10:35.527230
+2026-03-14 12:10:56,917 [INFO] epoch 0279: loss = 738.750688, elapsed = 0:10:36.036805
+2026-03-14 12:21:34,336 [INFO] epoch 0280: loss = 740.061328, elapsed = 0:10:37.418764
+2026-03-14 12:32:09,271 [INFO] epoch 0281: loss = 724.788789, elapsed = 0:10:34.934398
+2026-03-14 12:42:39,726 [INFO] epoch 0282: loss = 732.470064, elapsed = 0:10:30.455877
+2026-03-14 12:53:12,144 [INFO] epoch 0283: loss = 758.376238, elapsed = 0:10:32.418006
+2026-03-14 13:03:46,264 [INFO] epoch 0284: loss = 756.501683, elapsed = 0:10:34.119155
+2026-03-14 13:14:21,365 [INFO] epoch 0285: loss = 771.011327, elapsed = 0:10:35.101222
+2026-03-14 13:24:56,710 [INFO] epoch 0286: loss = 743.442061, elapsed = 0:10:35.344794
+2026-03-14 13:35:32,636 [INFO] epoch 0287: loss = 727.498634, elapsed = 0:10:35.926346
+2026-03-14 13:46:08,266 [INFO] epoch 0288: loss = 703.027011, elapsed = 0:10:35.629906
+2026-03-14 13:46:08,449 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0288.pt
+2026-03-14 13:56:43,331 [INFO] epoch 0289: loss = 715.422481, elapsed = 0:10:35.065188
+2026-03-14 14:07:19,169 [INFO] epoch 0290: loss = 720.047390, elapsed = 0:10:35.838101
+2026-03-14 14:17:51,514 [INFO] epoch 0291: loss = 714.336361, elapsed = 0:10:32.345164
+2026-03-14 14:28:21,865 [INFO] epoch 0292: loss = 733.510943, elapsed = 0:10:30.351079
+2026-03-14 14:38:53,124 [INFO] epoch 0293: loss = 713.469903, elapsed = 0:10:31.258981
+2026-03-14 14:49:21,464 [INFO] epoch 0294: loss = 721.594622, elapsed = 0:10:28.339968
+2026-03-14 14:59:54,147 [INFO] epoch 0295: loss = 715.662718, elapsed = 0:10:32.682528
+2026-03-14 15:10:26,840 [INFO] epoch 0296: loss = 749.429840, elapsed = 0:10:32.692704
+2026-03-14 15:21:00,318 [INFO] epoch 0297: loss = 718.875725, elapsed = 0:10:33.478215
+2026-03-14 15:31:32,970 [INFO] epoch 0298: loss = 739.581234, elapsed = 0:10:32.652421
+2026-03-14 15:42:06,280 [INFO] epoch 0299: loss = 735.615409, elapsed = 0:10:33.310029
+2026-03-14 15:52:39,756 [INFO] epoch 0300: loss = 746.304546, elapsed = 0:10:33.475513
+2026-03-14 15:52:39,756 [INFO] Generating samples for epoch 300...
+2026-03-14 15:55:03,066 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0300_samples
+2026-03-14 15:55:03,231 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0300.pt
+2026-03-14 16:05:37,523 [INFO] epoch 0301: loss = 730.865790, elapsed = 0:12:57.766979
+2026-03-14 16:16:10,616 [INFO] epoch 0302: loss = 737.973566, elapsed = 0:10:33.093004
+2026-03-14 16:26:45,024 [INFO] epoch 0303: loss = 725.335238, elapsed = 0:10:34.408248
+2026-03-14 16:37:18,861 [INFO] epoch 0304: loss = 743.103169, elapsed = 0:10:33.837292
+2026-03-14 16:47:52,044 [INFO] epoch 0305: loss = 709.642055, elapsed = 0:10:33.183026
+2026-03-14 16:58:25,143 [INFO] epoch 0306: loss = 715.286710, elapsed = 0:10:33.098350
+2026-03-14 17:08:47,798 [INFO] epoch 0307: loss = 744.426501, elapsed = 0:10:22.655450
+2026-03-14 17:19:14,509 [INFO] epoch 0308: loss = 731.436136, elapsed = 0:10:26.711028
+2026-03-14 17:29:39,479 [INFO] epoch 0309: loss = 720.381947, elapsed = 0:10:24.969959
+2026-03-14 17:40:06,875 [INFO] epoch 0310: loss = 717.650028, elapsed = 0:10:27.395807
+2026-03-14 17:50:34,306 [INFO] epoch 0311: loss = 705.051106, elapsed = 0:10:27.431355
+2026-03-14 18:01:04,321 [INFO] epoch 0312: loss = 697.897890, elapsed = 0:10:30.014752
+2026-03-14 18:01:04,504 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0312.pt
+2026-03-14 18:11:35,635 [INFO] epoch 0313: loss = 727.786964, elapsed = 0:10:31.314116
+2026-03-14 18:22:07,190 [INFO] epoch 0314: loss = 728.743020, elapsed = 0:10:31.554943
+2026-03-14 18:32:37,222 [INFO] epoch 0315: loss = 734.340311, elapsed = 0:10:30.031622
+2026-03-14 18:43:08,205 [INFO] epoch 0316: loss = 738.023347, elapsed = 0:10:30.983232
+2026-03-14 18:53:39,479 [INFO] epoch 0317: loss = 701.834205, elapsed = 0:10:31.274413
+2026-03-14 19:04:09,578 [INFO] epoch 0318: loss = 737.016154, elapsed = 0:10:30.098865
+2026-03-14 19:14:41,325 [INFO] epoch 0319: loss = 726.206271, elapsed = 0:10:31.747133
+2026-03-14 19:25:13,234 [INFO] epoch 0320: loss = 735.811190, elapsed = 0:10:31.908822
+2026-03-14 19:35:46,711 [INFO] epoch 0321: loss = 732.502494, elapsed = 0:10:33.476567
+2026-03-14 19:46:19,186 [INFO] epoch 0322: loss = 711.589590, elapsed = 0:10:32.475692
+2026-03-14 19:56:50,258 [INFO] epoch 0323: loss = 714.159889, elapsed = 0:10:31.071985
+2026-03-14 20:07:22,345 [INFO] epoch 0324: loss = 710.588248, elapsed = 0:10:32.086490
+2026-03-14 20:17:53,734 [INFO] epoch 0325: loss = 722.829442, elapsed = 0:10:31.389220
+2026-03-14 20:28:24,980 [INFO] epoch 0326: loss = 718.832835, elapsed = 0:10:31.245389
+2026-03-14 20:38:56,037 [INFO] epoch 0327: loss = 751.982812, elapsed = 0:10:31.057563
+2026-03-14 20:49:28,388 [INFO] epoch 0328: loss = 685.831236, elapsed = 0:10:32.350521
+2026-03-14 20:49:28,580 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0328.pt
+2026-03-14 21:00:00,380 [INFO] epoch 0329: loss = 725.144403, elapsed = 0:10:31.992778
+2026-03-14 21:10:32,327 [INFO] epoch 0330: loss = 727.705252, elapsed = 0:10:31.946173
+2026-03-14 21:21:04,118 [INFO] epoch 0331: loss = 753.737415, elapsed = 0:10:31.791046
+2026-03-14 21:31:36,656 [INFO] epoch 0332: loss = 717.503577, elapsed = 0:10:32.538594
+2026-03-14 21:42:08,646 [INFO] epoch 0333: loss = 748.198922, elapsed = 0:10:31.989413
+2026-03-14 21:52:40,741 [INFO] epoch 0334: loss = 731.966185, elapsed = 0:10:32.095156
+2026-03-14 22:03:09,363 [INFO] epoch 0335: loss = 698.035517, elapsed = 0:10:28.621874
+2026-03-14 22:13:40,925 [INFO] epoch 0336: loss = 714.028540, elapsed = 0:10:31.562464
+2026-03-14 22:24:13,899 [INFO] epoch 0337: loss = 702.558991, elapsed = 0:10:32.973877
+2026-03-14 22:34:46,441 [INFO] epoch 0338: loss = 713.260339, elapsed = 0:10:32.541778
+2026-03-14 22:45:17,842 [INFO] epoch 0339: loss = 698.912757, elapsed = 0:10:31.401221
+2026-03-14 22:55:49,822 [INFO] epoch 0340: loss = 716.196747, elapsed = 0:10:31.979728
+2026-03-14 23:06:21,828 [INFO] epoch 0341: loss = 716.822252, elapsed = 0:10:32.006744
+2026-03-14 23:16:54,145 [INFO] epoch 0342: loss = 721.787492, elapsed = 0:10:32.316936
+2026-03-14 23:27:26,303 [INFO] epoch 0343: loss = 720.727316, elapsed = 0:10:32.157800
+2026-03-14 23:37:58,134 [INFO] epoch 0344: loss = 741.690229, elapsed = 0:10:31.830675
+2026-03-14 23:48:30,941 [INFO] epoch 0345: loss = 714.559698, elapsed = 0:10:32.807063
+2026-03-14 23:59:02,749 [INFO] epoch 0346: loss = 715.566236, elapsed = 0:10:31.808482
+2026-03-15 00:09:34,469 [INFO] epoch 0347: loss = 724.981117, elapsed = 0:10:31.719987
+2026-03-15 00:20:06,071 [INFO] epoch 0348: loss = 712.426904, elapsed = 0:10:31.602089
+2026-03-15 00:30:38,287 [INFO] epoch 0349: loss = 717.217068, elapsed = 0:10:32.215856
+2026-03-15 00:41:02,700 [INFO] epoch 0350: loss = 715.954588, elapsed = 0:10:24.412943
+2026-03-15 00:41:02,701 [INFO] Generating samples for epoch 350...
+2026-03-15 00:43:22,556 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0350_samples
+2026-03-15 00:43:22,718 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0350.pt
+2026-03-15 00:53:53,264 [INFO] epoch 0351: loss = 733.145232, elapsed = 0:12:50.563468
+2026-03-15 01:04:25,136 [INFO] epoch 0352: loss = 714.449430, elapsed = 0:10:31.872340
+2026-03-15 01:14:57,631 [INFO] epoch 0353: loss = 729.523219, elapsed = 0:10:32.495210
+2026-03-15 01:25:30,288 [INFO] epoch 0354: loss = 713.857869, elapsed = 0:10:32.656342
+2026-03-15 01:36:02,043 [INFO] epoch 0355: loss = 727.299821, elapsed = 0:10:31.755487
+2026-03-15 01:46:35,055 [INFO] epoch 0356: loss = 693.544476, elapsed = 0:10:33.011381
+2026-03-15 01:57:07,645 [INFO] epoch 0357: loss = 728.582020, elapsed = 0:10:32.590238
+2026-03-15 02:07:39,968 [INFO] epoch 0358: loss = 713.365898, elapsed = 0:10:32.323399
+2026-03-15 02:18:12,940 [INFO] epoch 0359: loss = 704.679611, elapsed = 0:10:32.971503
+2026-03-15 02:28:45,906 [INFO] epoch 0360: loss = 710.687617, elapsed = 0:10:32.966357
+2026-03-15 02:39:18,965 [INFO] epoch 0361: loss = 714.880163, elapsed = 0:10:33.058502
+2026-03-15 02:49:51,572 [INFO] epoch 0362: loss = 714.173517, elapsed = 0:10:32.607785
+2026-03-15 03:00:23,280 [INFO] epoch 0363: loss = 707.486210, elapsed = 0:10:31.707786
+2026-03-15 03:10:59,183 [INFO] epoch 0364: loss = 701.889949, elapsed = 0:10:35.903100
+2026-03-15 03:21:35,327 [INFO] epoch 0365: loss = 716.414103, elapsed = 0:10:36.143410
+2026-03-15 03:32:10,411 [INFO] epoch 0366: loss = 696.629203, elapsed = 0:10:35.084856
+2026-03-15 03:42:47,290 [INFO] epoch 0367: loss = 682.059066, elapsed = 0:10:36.878636
+2026-03-15 03:42:47,483 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0367.pt
+2026-03-15 03:53:23,864 [INFO] epoch 0368: loss = 719.807879, elapsed = 0:10:36.574202
+2026-03-15 04:04:00,344 [INFO] epoch 0369: loss = 713.373004, elapsed = 0:10:36.480079
+2026-03-15 04:14:36,784 [INFO] epoch 0370: loss = 701.357774, elapsed = 0:10:36.439365
+2026-03-15 04:25:13,391 [INFO] epoch 0371: loss = 712.439666, elapsed = 0:10:36.606920
+2026-03-15 04:35:48,814 [INFO] epoch 0372: loss = 710.189971, elapsed = 0:10:35.423525
+2026-03-15 04:46:24,898 [INFO] epoch 0373: loss = 705.468739, elapsed = 0:10:36.083712
+2026-03-15 04:57:01,159 [INFO] epoch 0374: loss = 721.093335, elapsed = 0:10:36.261021
+2026-03-15 05:07:36,673 [INFO] epoch 0375: loss = 704.522752, elapsed = 0:10:35.514396
+2026-03-15 05:18:12,529 [INFO] epoch 0376: loss = 714.374898, elapsed = 0:10:35.855994
+2026-03-15 05:28:43,947 [INFO] epoch 0377: loss = 700.287187, elapsed = 0:10:31.417585
+2026-03-15 05:39:18,285 [INFO] epoch 0378: loss = 706.696173, elapsed = 0:10:34.337916
+2026-03-15 05:49:54,582 [INFO] epoch 0379: loss = 701.203114, elapsed = 0:10:36.297086
+2026-03-15 06:00:29,905 [INFO] epoch 0380: loss = 725.666375, elapsed = 0:10:35.322596
+2026-03-15 06:11:05,031 [INFO] epoch 0381: loss = 691.587211, elapsed = 0:10:35.126676
+2026-03-15 06:21:41,066 [INFO] epoch 0382: loss = 735.503700, elapsed = 0:10:36.034656
+2026-03-15 06:32:16,452 [INFO] epoch 0383: loss = 721.113475, elapsed = 0:10:35.386575
+2026-03-15 06:42:51,537 [INFO] epoch 0384: loss = 673.896249, elapsed = 0:10:35.084723
+2026-03-15 06:42:51,718 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0384.pt
+2026-03-15 06:53:26,261 [INFO] epoch 0385: loss = 710.558049, elapsed = 0:10:34.724122
+2026-03-15 07:04:01,378 [INFO] epoch 0386: loss = 708.755043, elapsed = 0:10:35.116922
+2026-03-15 07:14:37,467 [INFO] epoch 0387: loss = 694.469100, elapsed = 0:10:36.088855
+2026-03-15 07:25:11,933 [INFO] epoch 0388: loss = 714.438890, elapsed = 0:10:34.466394
+2026-03-15 07:35:46,964 [INFO] epoch 0389: loss = 717.460524, elapsed = 0:10:35.030403
+2026-03-15 07:46:20,420 [INFO] epoch 0390: loss = 695.406580, elapsed = 0:10:33.455702
+2026-03-15 07:56:54,045 [INFO] epoch 0391: loss = 732.620750, elapsed = 0:10:33.625722
+2026-03-15 08:07:28,369 [INFO] epoch 0392: loss = 748.171087, elapsed = 0:10:34.323518
+2026-03-15 08:18:02,654 [INFO] epoch 0393: loss = 698.826857, elapsed = 0:10:34.284788
+2026-03-15 08:28:36,834 [INFO] epoch 0394: loss = 696.152905, elapsed = 0:10:34.180454
+2026-03-15 08:39:10,853 [INFO] epoch 0395: loss = 714.591444, elapsed = 0:10:34.018808
+2026-03-15 08:49:44,730 [INFO] epoch 0396: loss = 704.549683, elapsed = 0:10:33.877055
+2026-03-15 09:00:19,416 [INFO] epoch 0397: loss = 695.845726, elapsed = 0:10:34.686610
+2026-03-15 09:10:54,358 [INFO] epoch 0398: loss = 702.452737, elapsed = 0:10:34.941427
+2026-03-15 09:21:29,684 [INFO] epoch 0399: loss = 701.639569, elapsed = 0:10:35.326528
+2026-03-15 09:32:06,252 [INFO] epoch 0400: loss = 731.202714, elapsed = 0:10:36.567889
+2026-03-15 09:32:06,253 [INFO] Generating samples for epoch 400...
+2026-03-15 09:34:30,220 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0400_samples
+2026-03-15 09:34:30,381 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0400.pt
+2026-03-15 09:45:03,456 [INFO] epoch 0401: loss = 705.847734, elapsed = 0:12:57.203697
+2026-03-15 09:55:32,833 [INFO] epoch 0402: loss = 712.442345, elapsed = 0:10:29.377243
+2026-03-15 10:06:08,625 [INFO] epoch 0403: loss = 703.637872, elapsed = 0:10:35.792043
+2026-03-15 10:16:44,087 [INFO] epoch 0404: loss = 692.119081, elapsed = 0:10:35.461893
+2026-03-15 10:27:19,964 [INFO] epoch 0405: loss = 711.037356, elapsed = 0:10:35.876609
+2026-03-15 10:37:56,311 [INFO] epoch 0406: loss = 706.228124, elapsed = 0:10:36.347657
+2026-03-15 10:48:32,598 [INFO] epoch 0407: loss = 709.103524, elapsed = 0:10:36.286673
+2026-03-15 10:59:09,381 [INFO] epoch 0408: loss = 716.053862, elapsed = 0:10:36.782666
+2026-03-15 11:09:45,132 [INFO] epoch 0409: loss = 721.769842, elapsed = 0:10:35.751520
+2026-03-15 11:20:22,753 [INFO] epoch 0410: loss = 698.965633, elapsed = 0:10:37.620704
+2026-03-15 11:30:58,671 [INFO] epoch 0411: loss = 678.450785, elapsed = 0:10:35.918028
+2026-03-15 11:41:34,880 [INFO] epoch 0412: loss = 720.883965, elapsed = 0:10:36.208755
+2026-03-15 11:52:11,241 [INFO] epoch 0413: loss = 719.959926, elapsed = 0:10:36.361523
+2026-03-15 12:02:47,050 [INFO] epoch 0414: loss = 712.077917, elapsed = 0:10:35.808415
+2026-03-15 12:13:23,480 [INFO] epoch 0415: loss = 697.254441, elapsed = 0:10:36.430624
+2026-03-15 12:23:59,671 [INFO] epoch 0416: loss = 724.072987, elapsed = 0:10:36.191092
+2026-03-15 12:34:35,375 [INFO] epoch 0417: loss = 712.806563, elapsed = 0:10:35.703774
+2026-03-15 12:45:12,200 [INFO] epoch 0418: loss = 720.996773, elapsed = 0:10:36.824436
+2026-03-15 12:55:48,933 [INFO] epoch 0419: loss = 689.621593, elapsed = 0:10:36.733281
+2026-03-15 13:06:18,942 [INFO] epoch 0420: loss = 717.103970, elapsed = 0:10:30.008689
+2026-03-15 13:16:53,841 [INFO] epoch 0421: loss = 693.127569, elapsed = 0:10:34.899632
+2026-03-15 13:27:29,826 [INFO] epoch 0422: loss = 693.456997, elapsed = 0:10:35.984380
+2026-03-15 13:38:05,702 [INFO] epoch 0423: loss = 719.171474, elapsed = 0:10:35.876690
+2026-03-15 13:48:41,437 [INFO] epoch 0424: loss = 668.152854, elapsed = 0:10:35.734204
+2026-03-15 13:48:41,644 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0424.pt
+2026-03-15 13:59:16,821 [INFO] epoch 0425: loss = 745.407783, elapsed = 0:10:35.384567
+2026-03-15 14:09:51,521 [INFO] epoch 0426: loss = 713.243914, elapsed = 0:10:34.699459
+2026-03-15 14:20:27,667 [INFO] epoch 0427: loss = 710.137805, elapsed = 0:10:36.146669
+2026-03-15 14:31:02,990 [INFO] epoch 0428: loss = 714.811324, elapsed = 0:10:35.322666
+2026-03-15 14:41:38,321 [INFO] epoch 0429: loss = 698.807741, elapsed = 0:10:35.331321
+2026-03-15 14:52:13,546 [INFO] epoch 0430: loss = 699.532157, elapsed = 0:10:35.224763
+2026-03-15 15:02:49,166 [INFO] epoch 0431: loss = 697.443850, elapsed = 0:10:35.620361
+2026-03-15 15:13:25,273 [INFO] epoch 0432: loss = 684.467397, elapsed = 0:10:36.107066
+2026-03-15 15:24:02,964 [INFO] epoch 0433: loss = 690.618553, elapsed = 0:10:37.690180
+2026-03-15 15:34:28,729 [INFO] epoch 0434: loss = 682.660983, elapsed = 0:10:25.765171
+2026-03-15 15:44:55,511 [INFO] epoch 0435: loss = 717.909109, elapsed = 0:10:26.782657
+2026-03-15 15:55:27,930 [INFO] epoch 0436: loss = 717.014559, elapsed = 0:10:32.418506
+2026-03-15 16:05:58,589 [INFO] epoch 0437: loss = 694.056555, elapsed = 0:10:30.658981
+2026-03-15 16:16:26,898 [INFO] epoch 0438: loss = 686.530938, elapsed = 0:10:28.309457
+2026-03-15 16:26:53,533 [INFO] epoch 0439: loss = 698.582478, elapsed = 0:10:26.634814
+2026-03-15 16:37:21,391 [INFO] epoch 0440: loss = 708.052459, elapsed = 0:10:27.857779
+2026-03-15 16:47:38,576 [INFO] epoch 0441: loss = 699.211814, elapsed = 0:10:17.184755
+2026-03-15 16:57:55,878 [INFO] epoch 0442: loss = 682.709465, elapsed = 0:10:17.301760
+2026-03-15 17:08:26,932 [INFO] epoch 0443: loss = 710.187906, elapsed = 0:10:31.054380
+2026-03-15 17:19:07,366 [INFO] epoch 0444: loss = 703.175905, elapsed = 0:10:40.434266
+2026-03-15 17:29:46,324 [INFO] epoch 0445: loss = 666.273407, elapsed = 0:10:38.958010
+2026-03-15 17:29:46,517 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0445.pt
+2026-03-15 17:40:25,906 [INFO] epoch 0446: loss = 699.429912, elapsed = 0:10:39.582268
+2026-03-15 17:51:05,492 [INFO] epoch 0447: loss = 698.531341, elapsed = 0:10:39.585313
+2026-03-15 18:01:45,919 [INFO] epoch 0448: loss = 703.442708, elapsed = 0:10:40.427675
+2026-03-15 18:12:26,630 [INFO] epoch 0449: loss = 677.078571, elapsed = 0:10:40.710219
+2026-03-15 18:23:06,342 [INFO] epoch 0450: loss = 708.464520, elapsed = 0:10:39.712776
+2026-03-15 18:23:06,343 [INFO] Generating samples for epoch 450...
+2026-03-15 18:25:31,207 [INFO] Samples saved to ./results/acdc_unconditional/acdc_uncond_db4_new/epoch_0450_samples
+2026-03-15 18:25:31,374 [INFO] Saved periodic checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/model_epoch_0450.pt
+2026-03-15 18:36:11,135 [INFO] epoch 0451: loss = 656.103195, elapsed = 0:13:04.792201
+2026-03-15 18:36:11,316 [INFO] Saved checkpoint: ./results/acdc_unconditional/acdc_uncond_db4_new/best_model_epoch_0451.pt
+2026-03-15 18:46:51,658 [INFO] epoch 0452: loss = 714.883273, elapsed = 0:10:40.523082
+2026-03-15 18:57:29,566 [INFO] epoch 0453: loss = 701.597074, elapsed = 0:10:37.907830

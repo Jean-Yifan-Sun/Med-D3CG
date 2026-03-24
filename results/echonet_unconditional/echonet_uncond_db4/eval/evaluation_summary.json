@@ -1,0 +1,167 @@
+[
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0005.pt",
+    "checkpoint_name": "model_epoch_0005",
+    "lpips_score": 0.4968334535956383,
+    "lpips_std": null,
+    "fid_score": 203.45058269024813,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0010.pt",
+    "checkpoint_name": "model_epoch_0010",
+    "lpips_score": 0.48519783847033976,
+    "lpips_std": null,
+    "fid_score": 159.39180127655283,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0015.pt",
+    "checkpoint_name": "model_epoch_0015",
+    "lpips_score": 0.48590993881225586,
+    "lpips_std": null,
+    "fid_score": 146.78199019997206,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0020.pt",
+    "checkpoint_name": "model_epoch_0020",
+    "lpips_score": 0.47674612890183926,
+    "lpips_std": null,
+    "fid_score": 115.14577063854708,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0025.pt",
+    "checkpoint_name": "model_epoch_0025",
+    "lpips_score": 0.4728338877260685,
+    "lpips_std": null,
+    "fid_score": 100.22073605096818,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0030.pt",
+    "checkpoint_name": "model_epoch_0030",
+    "lpips_score": 0.47882295595109464,
+    "lpips_std": null,
+    "fid_score": 96.91119083599864,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0035.pt",
+    "checkpoint_name": "model_epoch_0035",
+    "lpips_score": 0.4801799330562353,
+    "lpips_std": null,
+    "fid_score": 92.70433373881104,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0040.pt",
+    "checkpoint_name": "model_epoch_0040",
+    "lpips_score": 0.47401132878661156,
+    "lpips_std": null,
+    "fid_score": 98.99837925044852,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0045.pt",
+    "checkpoint_name": "model_epoch_0045",
+    "lpips_score": 0.47275998525321483,
+    "lpips_std": null,
+    "fid_score": 89.91780818477531,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0050.pt",
+    "checkpoint_name": "model_epoch_0050",
+    "lpips_score": 0.4818215794861317,
+    "lpips_std": null,
+    "fid_score": 106.28658462250715,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0055.pt",
+    "checkpoint_name": "model_epoch_0055",
+    "lpips_score": 0.4780255863517523,
+    "lpips_std": null,
+    "fid_score": 97.10561573101552,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0060.pt",
+    "checkpoint_name": "model_epoch_0060",
+    "lpips_score": 0.47428211054205893,
+    "lpips_std": null,
+    "fid_score": 107.09637684818654,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0065.pt",
+    "checkpoint_name": "model_epoch_0065",
+    "lpips_score": 0.4727215799242258,
+    "lpips_std": null,
+    "fid_score": 92.46940549665055,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0070.pt",
+    "checkpoint_name": "model_epoch_0070",
+    "lpips_score": 0.47458775863051417,
+    "lpips_std": null,
+    "fid_score": 93.28050474749159,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  },
+  {
+    "checkpoint": "results/echonet_unconditional/echonet_uncond_db4/model_epoch_0075.pt",
+    "checkpoint_name": "model_epoch_0075",
+    "lpips_score": 0.46751466435194017,
+    "lpips_std": null,
+    "fid_score": 80.5803066145765,
+    "sample_counts": {
+      "lpips": 2000,
+      "fid": 50000
+    }
+  }
+]

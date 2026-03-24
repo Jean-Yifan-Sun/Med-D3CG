@@ -1,0 +1,196 @@
+2026-03-14 20:19:10,669 [INFO] Args: Namespace(model_name='D3CG_uncond_db4', wave_type='db4', transform_levels=1, dataset_dir='data/echonet/images', val_dataset_dir='./data/medical_images_val', is_rgb=False, out_name='echonet_uncond_db4', batch_size=512, T=1000, ch=64, ch_mult=[1, 2, 3, 4], attn=[2], num_res_blocks=2, dropout=0.1, lr=2e-05, n_epochs=75, beta_1=0.0001, beta_T=0.02, grad_clip=1.0, image_size=112, save_weight_dir='./results/echonet_unconditional', resume_ckpt='', start_epoch=1, val_start_epoch=10, val_num=8, save_interval=5, list_models=False)
+2026-03-14 20:19:10,669 [INFO] Model: D3CG_uncond_db4
+2026-03-14 20:19:10,669 [INFO] Device: cuda:0
+2026-03-14 20:19:10,670 [INFO] Loading datasets...
+2026-03-14 20:29:29,604 [INFO] Dataset initialized with root_dir: data/echonet/images
+2026-03-14 20:29:29,608 [INFO] Found 358259 image files
+2026-03-14 20:29:29,643 [INFO] Training dataset size: 358259
+2026-03-14 20:29:29,643 [INFO] Initializing model with in_channels=1, out_channels=1
+2026-03-14 20:29:30,593 [INFO] Initializing trainer and sampler...
+2026-03-14 20:29:30,600 [INFO] Starting model profiling...
+2026-03-14 20:29:36,351 [INFO] Model profiling completed:
+2026-03-14 20:29:36,351 [INFO]   Parameters: 20.83M
+2026-03-14 20:29:36,351 [INFO]   FLOPs: 2913.568G
+2026-03-14 20:29:36,351 [INFO]   Memory: 0.0MB
+2026-03-14 20:29:36,351 [INFO]   Inference Time: 215.25ms
+2026-03-14 20:37:14,355 [INFO] Args: Namespace(model_name='D3CG_uncond_db4', wave_type='db4', transform_levels=1, dataset_dir='data/echonet/images', val_dataset_dir='./data/medical_images_val', is_rgb=False, out_name='echonet_uncond_db4', batch_size=512, T=1000, ch=64, ch_mult=[1, 2, 3, 4], attn=[2], num_res_blocks=2, dropout=0.1, lr=2e-05, n_epochs=75, beta_1=0.0001, beta_T=0.02, grad_clip=1.0, image_size=112, save_weight_dir='./results/echonet_unconditional', resume_ckpt='', start_epoch=1, val_start_epoch=10, val_num=8, save_interval=5, list_models=False)
+2026-03-14 20:37:14,360 [INFO] Model: D3CG_uncond_db4
+2026-03-14 20:37:14,360 [INFO] Device: cuda:0
+2026-03-14 20:37:14,360 [INFO] Loading datasets...
+2026-03-14 20:47:39,043 [INFO] Dataset initialized with root_dir: data/echonet/images
+2026-03-14 20:47:39,047 [INFO] Found 358259 image files
+2026-03-14 20:47:39,080 [INFO] Training dataset size: 358259
+2026-03-14 20:47:39,081 [INFO] Initializing model with in_channels=1, out_channels=1
+2026-03-14 20:47:39,726 [INFO] Initializing trainer and sampler...
+2026-03-14 20:47:39,733 [INFO] Starting model profiling...
+2026-03-14 20:47:44,629 [INFO] Model profiling completed:
+2026-03-14 20:47:44,632 [INFO]   Parameters: 20.83M
+2026-03-14 20:47:44,632 [INFO]   FLOPs: 2913.568G
+2026-03-14 20:47:44,632 [INFO]   Memory: 0.0MB
+2026-03-14 20:47:44,632 [INFO]   Inference Time: 191.42ms
+2026-03-14 20:55:25,114 [INFO] epoch 0001: loss = 928552.729353, elapsed = 0:07:40.481441
+2026-03-14 20:55:25,369 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0001.pt
+2026-03-14 21:03:03,787 [INFO] epoch 0002: loss = 251982.563371, elapsed = 0:07:38.673434
+2026-03-14 21:03:03,953 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0002.pt
+2026-03-14 21:10:42,176 [INFO] epoch 0003: loss = 221292.430647, elapsed = 0:07:38.388357
+2026-03-14 21:10:42,341 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0003.pt
+2026-03-14 21:18:20,066 [INFO] epoch 0004: loss = 208749.830904, elapsed = 0:07:37.890353
+2026-03-14 21:18:20,250 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0004.pt
+2026-03-14 21:25:58,186 [INFO] epoch 0005: loss = 197120.056406, elapsed = 0:07:38.120095
+2026-03-14 21:25:58,342 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0005.pt
+2026-03-14 21:25:58,498 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0005.pt
+2026-03-14 21:33:36,304 [INFO] epoch 0006: loss = 192403.709420, elapsed = 0:07:38.117986
+2026-03-14 21:33:36,469 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0006.pt
+2026-03-14 21:41:14,445 [INFO] epoch 0007: loss = 186050.132679, elapsed = 0:07:38.140516
+2026-03-14 21:41:14,600 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0007.pt
+2026-03-14 21:48:52,454 [INFO] epoch 0008: loss = 181936.438237, elapsed = 0:07:38.009251
+2026-03-14 21:48:52,625 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0008.pt
+2026-03-14 21:56:30,476 [INFO] epoch 0009: loss = 179154.830067, elapsed = 0:07:38.021826
+2026-03-14 21:56:30,630 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0009.pt
+2026-03-14 22:04:08,522 [INFO] epoch 0010: loss = 176944.391507, elapsed = 0:07:38.046228
+2026-03-14 22:04:08,522 [INFO] Generating samples for epoch 10...
+2026-03-14 22:06:29,522 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0010_samples
+2026-03-14 22:06:29,702 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0010.pt
+2026-03-14 22:06:29,857 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0010.pt
+2026-03-14 22:14:07,928 [INFO] epoch 0011: loss = 173622.811585, elapsed = 0:09:59.405775
+2026-03-14 22:14:08,082 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0011.pt
+2026-03-14 22:21:46,133 [INFO] epoch 0012: loss = 173103.850234, elapsed = 0:07:38.205549
+2026-03-14 22:21:46,310 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0012.pt
+2026-03-14 22:29:24,215 [INFO] epoch 0013: loss = 170514.398962, elapsed = 0:07:38.081889
+2026-03-14 22:29:24,376 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0013.pt
+2026-03-14 22:37:02,244 [INFO] epoch 0014: loss = 168123.703850, elapsed = 0:07:38.028571
+2026-03-14 22:37:02,405 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0014.pt
+2026-03-14 22:44:41,082 [INFO] epoch 0015: loss = 166955.562388, elapsed = 0:07:38.838765
+2026-03-14 22:44:41,083 [INFO] Generating samples for epoch 15...
+2026-03-14 22:47:01,792 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0015_samples
+2026-03-14 22:47:01,943 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0015.pt
+2026-03-14 22:47:02,104 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0015.pt
+2026-03-14 22:54:39,708 [INFO] epoch 0016: loss = 166542.578248, elapsed = 0:09:58.625667
+2026-03-14 22:54:39,858 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0016.pt
+2026-03-14 23:02:18,176 [INFO] epoch 0017: loss = 167136.007400, elapsed = 0:07:38.467705
+2026-03-14 23:09:56,156 [INFO] epoch 0018: loss = 165148.147042, elapsed = 0:07:37.980545
+2026-03-14 23:09:56,300 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0018.pt
+2026-03-14 23:17:34,107 [INFO] epoch 0019: loss = 163437.039855, elapsed = 0:07:37.950167
+2026-03-14 23:17:34,273 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0019.pt
+2026-03-14 23:25:11,648 [INFO] epoch 0020: loss = 162861.754208, elapsed = 0:07:37.541116
+2026-03-14 23:25:11,648 [INFO] Generating samples for epoch 20...
+2026-03-14 23:27:28,630 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0020_samples
+2026-03-14 23:27:28,784 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0020.pt
+2026-03-14 23:27:28,929 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0020.pt
+2026-03-14 23:35:06,647 [INFO] epoch 0021: loss = 162715.169665, elapsed = 0:09:54.998855
+2026-03-14 23:35:06,812 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0021.pt
+2026-03-14 23:42:44,807 [INFO] epoch 0022: loss = 160540.802121, elapsed = 0:07:38.160695
+2026-03-14 23:42:44,974 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0022.pt
+2026-03-14 23:50:23,070 [INFO] epoch 0023: loss = 159644.915301, elapsed = 0:07:38.262321
+2026-03-14 23:50:23,238 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0023.pt
+2026-03-14 23:58:01,163 [INFO] epoch 0024: loss = 160874.908616, elapsed = 0:07:38.093121
+2026-03-15 00:05:39,168 [INFO] epoch 0025: loss = 158846.143114, elapsed = 0:07:38.004907
+2026-03-15 00:05:39,168 [INFO] Generating samples for epoch 25...
+2026-03-15 00:07:59,209 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0025_samples
+2026-03-15 00:07:59,367 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0025.pt
+2026-03-15 00:07:59,515 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0025.pt
+2026-03-15 00:15:37,945 [INFO] epoch 0026: loss = 158341.531194, elapsed = 0:09:58.777494
+2026-03-15 00:15:38,114 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0026.pt
+2026-03-15 00:23:16,245 [INFO] epoch 0027: loss = 158266.907031, elapsed = 0:07:38.300056
+2026-03-15 00:23:16,391 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0027.pt
+2026-03-15 00:30:54,828 [INFO] epoch 0028: loss = 156454.421451, elapsed = 0:07:38.582614
+2026-03-15 00:30:54,997 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0028.pt
+2026-03-15 00:38:33,117 [INFO] epoch 0029: loss = 157195.029654, elapsed = 0:07:38.289480
+2026-03-15 00:46:11,127 [INFO] epoch 0030: loss = 156490.032277, elapsed = 0:07:38.009395
+2026-03-15 00:46:11,127 [INFO] Generating samples for epoch 30...
+2026-03-15 00:48:31,256 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0030_samples
+2026-03-15 00:48:31,399 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0030.pt
+2026-03-15 00:56:09,372 [INFO] epoch 0031: loss = 154997.417801, elapsed = 0:09:58.245221
+2026-03-15 00:56:09,531 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0031.pt
+2026-03-15 01:03:48,229 [INFO] epoch 0032: loss = 157166.238125, elapsed = 0:07:38.857012
+2026-03-15 01:11:26,450 [INFO] epoch 0033: loss = 155130.959888, elapsed = 0:07:38.220645
+2026-03-15 01:19:04,527 [INFO] epoch 0034: loss = 155062.803147, elapsed = 0:07:38.077654
+2026-03-15 01:26:42,533 [INFO] epoch 0035: loss = 154069.203002, elapsed = 0:07:38.005414
+2026-03-15 01:26:42,533 [INFO] Generating samples for epoch 35...
+2026-03-15 01:29:03,346 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0035_samples
+2026-03-15 01:29:03,517 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0035.pt
+2026-03-15 01:29:03,661 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0035.pt
+2026-03-15 01:36:41,695 [INFO] epoch 0036: loss = 153435.546585, elapsed = 0:09:59.162071
+2026-03-15 01:36:41,866 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0036.pt
+2026-03-15 01:44:19,981 [INFO] epoch 0037: loss = 153017.414989, elapsed = 0:07:38.286422
+2026-03-15 01:44:20,142 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0037.pt
+2026-03-15 01:51:57,943 [INFO] epoch 0038: loss = 153446.057266, elapsed = 0:07:37.962240
+2026-03-15 01:59:35,896 [INFO] epoch 0039: loss = 151594.357801, elapsed = 0:07:37.953028
+2026-03-15 01:59:36,050 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0039.pt
+2026-03-15 02:07:14,158 [INFO] epoch 0040: loss = 151386.524129, elapsed = 0:07:38.261879
+2026-03-15 02:07:14,158 [INFO] Generating samples for epoch 40...
+2026-03-15 02:09:34,337 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0040_samples
+2026-03-15 02:09:34,499 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0040.pt
+2026-03-15 02:09:34,656 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0040.pt
+2026-03-15 02:17:12,773 [INFO] epoch 0041: loss = 151842.328929, elapsed = 0:09:58.614651
+2026-03-15 02:24:50,741 [INFO] epoch 0042: loss = 151970.631328, elapsed = 0:07:37.968510
+2026-03-15 02:32:28,913 [INFO] epoch 0043: loss = 150417.960324, elapsed = 0:07:38.171820
+2026-03-15 02:32:29,068 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0043.pt
+2026-03-15 02:40:07,133 [INFO] epoch 0044: loss = 151538.036674, elapsed = 0:07:38.220035
+2026-03-15 02:47:46,230 [INFO] epoch 0045: loss = 151125.012065, elapsed = 0:07:39.096920
+2026-03-15 02:47:46,230 [INFO] Generating samples for epoch 45...
+2026-03-15 02:50:06,936 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0045_samples
+2026-03-15 02:50:07,082 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0045.pt
+2026-03-15 02:57:44,947 [INFO] epoch 0046: loss = 151054.801853, elapsed = 0:09:58.716696
+2026-03-15 03:05:23,168 [INFO] epoch 0047: loss = 150117.483783, elapsed = 0:07:38.221187
+2026-03-15 03:05:23,393 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0047.pt
+2026-03-15 03:13:01,736 [INFO] epoch 0048: loss = 151486.482455, elapsed = 0:07:38.568173
+2026-03-15 03:20:39,504 [INFO] epoch 0049: loss = 150274.099040, elapsed = 0:07:37.767444
+2026-03-15 03:28:17,448 [INFO] epoch 0050: loss = 149383.670190, elapsed = 0:07:37.944371
+2026-03-15 03:28:17,448 [INFO] Generating samples for epoch 50...
+2026-03-15 03:30:37,923 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0050_samples
+2026-03-15 03:30:38,067 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0050.pt
+2026-03-15 03:30:38,232 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0050.pt
+2026-03-15 03:38:16,912 [INFO] epoch 0051: loss = 149688.181875, elapsed = 0:09:59.464250
+2026-03-15 03:45:54,782 [INFO] epoch 0052: loss = 149370.743326, elapsed = 0:07:37.869210
+2026-03-15 03:45:54,945 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0052.pt
+2026-03-15 03:53:33,305 [INFO] epoch 0053: loss = 149057.423627, elapsed = 0:07:38.523884
+2026-03-15 03:53:33,478 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0053.pt
+2026-03-15 04:01:11,428 [INFO] epoch 0054: loss = 148051.816004, elapsed = 0:07:38.122166
+2026-03-15 04:01:11,634 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0054.pt
+2026-03-15 04:08:49,770 [INFO] epoch 0055: loss = 147868.116417, elapsed = 0:07:38.342635
+2026-03-15 04:08:49,770 [INFO] Generating samples for epoch 55...
+2026-03-15 04:11:10,112 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0055_samples
+2026-03-15 04:11:10,270 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0055.pt
+2026-03-15 04:11:10,427 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0055.pt
+2026-03-15 04:18:48,600 [INFO] epoch 0056: loss = 147452.185949, elapsed = 0:09:58.830024
+2026-03-15 04:18:48,769 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0056.pt
+2026-03-15 04:26:26,938 [INFO] epoch 0057: loss = 147442.886563, elapsed = 0:07:38.337846
+2026-03-15 04:26:27,106 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0057.pt
+2026-03-15 04:34:05,288 [INFO] epoch 0058: loss = 146948.331652, elapsed = 0:07:38.349864
+2026-03-15 04:34:05,449 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0058.pt
+2026-03-15 04:41:43,535 [INFO] epoch 0059: loss = 147546.947333, elapsed = 0:07:38.246648
+2026-03-15 04:49:21,759 [INFO] epoch 0060: loss = 147696.173292, elapsed = 0:07:38.224331
+2026-03-15 04:49:21,759 [INFO] Generating samples for epoch 60...
+2026-03-15 04:51:42,278 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0060_samples
+2026-03-15 04:51:42,438 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0060.pt
+2026-03-15 04:59:21,431 [INFO] epoch 0061: loss = 145981.246964, elapsed = 0:09:59.672548
+2026-03-15 04:59:21,611 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0061.pt
+2026-03-15 05:06:59,760 [INFO] epoch 0062: loss = 146982.488103, elapsed = 0:07:38.328271
+2026-03-15 05:14:37,985 [INFO] epoch 0063: loss = 146761.584799, elapsed = 0:07:38.225305
+2026-03-15 05:22:16,467 [INFO] epoch 0064: loss = 146602.294286, elapsed = 0:07:38.482009
+2026-03-15 05:29:54,714 [INFO] epoch 0065: loss = 147267.405491, elapsed = 0:07:38.246964
+2026-03-15 05:29:54,714 [INFO] Generating samples for epoch 65...
+2026-03-15 05:32:15,731 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0065_samples
+2026-03-15 05:32:15,897 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0065.pt
+2026-03-15 05:39:54,766 [INFO] epoch 0066: loss = 145836.312545, elapsed = 0:10:00.052422
+2026-03-15 05:39:54,939 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0066.pt
+2026-03-15 05:47:33,157 [INFO] epoch 0067: loss = 146685.430658, elapsed = 0:07:38.390924
+2026-03-15 05:55:11,490 [INFO] epoch 0068: loss = 146234.300100, elapsed = 0:07:38.332446
+2026-03-15 06:02:50,049 [INFO] epoch 0069: loss = 145727.328025, elapsed = 0:07:38.559006
+2026-03-15 06:02:50,224 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0069.pt
+2026-03-15 06:10:28,389 [INFO] epoch 0070: loss = 145547.337746, elapsed = 0:07:38.340304
+2026-03-15 06:10:28,389 [INFO] Generating samples for epoch 70...
+2026-03-15 06:12:48,295 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0070_samples
+2026-03-15 06:12:48,460 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0070.pt
+2026-03-15 06:12:48,608 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0070.pt
+2026-03-15 06:20:26,674 [INFO] epoch 0071: loss = 144011.994018, elapsed = 0:09:58.284413
+2026-03-15 06:20:26,831 [INFO] Saved checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/best_model_epoch_0071.pt
+2026-03-15 06:28:04,737 [INFO] epoch 0072: loss = 144716.477042, elapsed = 0:07:38.063317
+2026-03-15 06:35:42,479 [INFO] epoch 0073: loss = 144370.601562, elapsed = 0:07:37.742346
+2026-03-15 06:43:20,696 [INFO] epoch 0074: loss = 145154.930804, elapsed = 0:07:38.217025
+2026-03-15 06:50:59,175 [INFO] epoch 0075: loss = 144308.918694, elapsed = 0:07:38.479164
+2026-03-15 06:50:59,176 [INFO] Generating samples for epoch 75...
+2026-03-15 06:53:19,798 [INFO] Samples saved to ./results/echonet_unconditional/echonet_uncond_db4/epoch_0075_samples
+2026-03-15 06:53:19,958 [INFO] Saved periodic checkpoint: ./results/echonet_unconditional/echonet_uncond_db4/model_epoch_0075.pt
+2026-03-15 06:53:19,958 [INFO] Training completed!
